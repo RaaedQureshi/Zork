@@ -14,7 +14,7 @@ import javax.sound.sampled.Clip;
 
 public class HorseRacing1 {
 	static Scanner input = new Scanner(System.in);
-	static String[] horseOptions = new String[5];
+	static String[] horsesInRace = new String[5];
 	static int[] playerIndex = new int[3];
 	
 	public static void main(String[] args) throws InterruptedException, IOException {
@@ -164,18 +164,9 @@ public class HorseRacing1 {
 		int player = 0;
 		String[] playerArr = new String[numPlayers];
 		String input1 = "";
-		System.out.println("#|Player Names  |   Wallets ");
-		int num = 6; // because there are 6 players
-		for (int i = 1; i < num; i++) {
-			System.out.println("_________________");
-			System.out.print(i + 1 + "|");
-			System.out.printf("%-14s", players[i-1]);
-			System.out.printf("|%10d", wallet[i-1]);
-			System.out.println("");
+		for (int j = 1; j < 6; j++) {
+			System.out.println(j + ". " + players[j-1] + "  -->  Money: " + wallet[j-1]);
 		}
-		System.out.println("");
-		Thread.sleep(1000);
-		
 		for (int i = 1; i <= numPlayers; i++) {
 			boolean valid = false;
 			while (!valid) {
@@ -238,7 +229,7 @@ public class HorseRacing1 {
 			done = true;
 			}
 			System.out.println(i + ". " + tempHorses[i-1]);
-			horseOptions[i - 1] = tempHorses[i-1];
+			horsesInRace[i - 1] = tempHorses[i-1];
 			}
 		}
 		
@@ -261,15 +252,15 @@ public class HorseRacing1 {
 			}
 
 			if (horseNum == 1) {
-				horsesChosen[j - 1] = horseOptions[0];
+				horsesChosen[j - 1] = horsesInRace[0];
 			} else if (horseNum == 2) {
-				horsesChosen[j - 1] = horseOptions[1];
+				horsesChosen[j - 1] = horsesInRace[1];
 			} else if (horseNum == 3) {
-				horsesChosen[j - 1] = horseOptions[2];
+				horsesChosen[j - 1] = horsesInRace[2];
 			} else if (horseNum == 4) {
-				horsesChosen[j - 1] = horseOptions[3];
+				horsesChosen[j - 1] = horsesInRace[3];
 			} else if (horseNum == 5) {
-				horsesChosen[j - 1] = horseOptions[4];
+				horsesChosen[j - 1] = horsesInRace[4];
 			}
 		}
 		return horsesChosen;
@@ -302,17 +293,17 @@ public class HorseRacing1 {
 
 	public static int displayRace(String[] currentHorse, int numPlayers) throws InterruptedException {
 
-		int[] position = new int[horseOptions.length];
+		int[] position = new int[horsesInRace.length];
 		Thread.sleep(2500);
 		boolean finished = false;
 
 		while (!finished) {
 			Thread.sleep(200);
 			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-			for (int i = 0; i < horseOptions.length; i++) {
+			for (int i = 0; i < horsesInRace.length; i++) {
 				System.out.println(
 						"---------------------|-----------------------------------------------------------------------------------------------------|");
-				System.out.printf("%20s |", horseOptions[i]);
+				System.out.printf("%20s |", horsesInRace[i]);
 
 				if (position[i] < 100) {
 					position[i] += (int) (Math.random() * 4);
@@ -327,14 +318,14 @@ public class HorseRacing1 {
 			System.out.println(
 					"---------------------|-----------------------------------------------------------------------------------------------------|");
 
-			for (int k = 0; k < horseOptions.length; k++) {
+			for (int k = 0; k < horsesInRace.length; k++) {
 				if (position[k] >= 100) {
 					finished = true;
-					System.out.println("\n The winner of the race is " + horseOptions[k] + "!");
+					System.out.println("\n The winner of the race is " + horsesInRace[k] + "!");
 				}
 
 				for (int l = 0; l < numPlayers; l++) {
-					if (horseOptions[k].equals(currentHorse[l]) && position[k] >= 100) {
+					if (horsesInRace[k].equals(currentHorse[l]) && position[k] >= 100) {
 						return l;
 					}
 				}
@@ -364,7 +355,7 @@ public class HorseRacing1 {
 	
 	public static void addToFile(String[] players, int[] newWallets, int[] wallet, String[] playersArr, int numPlayers) throws IOException{
 		
-			PrintWriter addToFiler = new PrintWriter(new FileWriter("Input/playerData.dat"));
+			PrintWriter addToFiler = new PrintWriter(new FileWriter("Input/player.dat"));
 			addToFiler.print(players.length);
 			for (int i = 0; i <5; i++){
 				
