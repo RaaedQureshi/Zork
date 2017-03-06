@@ -32,7 +32,7 @@ public class HorseRacing1 {
 		String[] playersArr = playerName(players, wallet, numPlayers); 	// New array of players that are chosen by users
 		int[] newWallets = findWallets(wallet, numPlayers); // Creates new wallets for racing users
 		while (play) {
-			String[] currentHorse = whatHorse(horses, numPlayers); 	// Takes 5 random race horses and asks users which one they want to bet on
+			String[] currentHorse = raceHorses(horses, numPlayers); 	// Takes 5 random race horses and asks users which one they want to bet on
 			int bet[] = getBet(currentHorse, newWallets, numPlayers); 	// get player bets
 			int winningHorse = displayRace(currentHorse, numPlayers); 	// runs race to find index of winning horse
 			afterRace(winningHorse, bet, newWallets, numPlayers); 	//deals with the results of race
@@ -165,7 +165,7 @@ public class HorseRacing1 {
 		String[] playerArr = new String[numPlayers];
 		String input1 = "";
 		for (int j = 1; j < 6; j++) {
-			System.out.println(j + ". " + players[j-1] + "  -->  Money: " + wallet[j-1]);
+			System.out.println(j + ". " + players[j-1] + "  >>>  Wallet: " + wallet[j-1]);
 		}
 		for (int i = 1; i <= numPlayers; i++) {
 			boolean valid = false;
@@ -214,7 +214,7 @@ public class HorseRacing1 {
 		return newWallets;
 	}
 
-	public static String[] whatHorse(String[] horses, int numPlayers) {
+	public static String[] raceHorses(String[] horses, int numPlayers) {
 		String[] horsesChosen = new String[numPlayers];
 		String[] tempHorses = new String[5];
 		System.out.println("Horses you can bet on:");
