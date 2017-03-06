@@ -372,7 +372,7 @@ public class HorseRacing1 {
 		} 
 	
 	public static boolean play() {
-		String answer = "";
+		String answer = null;
 		while (!(answer.equals("y") || answer.equals("yes") || (answer.equals("n") || answer.equals("no")))) {
 			System.out.println("Would you like to play again? Please enter 'Y' for yes and 'N' for no.");
 			answer = input.nextLine();
