@@ -29,14 +29,14 @@ public class HorseRacing1 {
 		String[] players = getPlayers(); 	//Takes players from the input file
 		int[] wallet = getWallet();	 // Takes the player wallets from the input file
 		int numPlayers = howManyPlayers();	 // To get amount of players playing
-		String[] playersArray = playerName(players, wallet, numPlayers); 	// New array of players that are chosen by users
+		String[] playersArr = playerName(players, wallet, numPlayers); 	// New array of players that are chosen by users
 		int[] newWallets = findWallets(wallet, numPlayers); // Creates new wallets for racing users
 		while (play) {
 			String[] currentHorse = raceHorses(horses, numPlayers); 	// Takes 5 random race horses and asks users which one they want to bet on
 			int bet[] = getBet(currentHorse, newWallets, numPlayers); 	// get player bets
 			int winningHorse = displayRace(currentHorse, numPlayers); 	// runs race to find index of winning horse
 			afterRace(winningHorse, bet, newWallets, numPlayers); 	//deals with the results of race
-			addToFile(players, newWallets, wallet, playersArray, numPlayers); 	// adds results to file
+			addToFile(players, newWallets, wallet, playersArr, numPlayers); 	// adds results to file
 			play = play(); 	//asks user if they want to play again
 		}
 		closingMessage();;
@@ -353,14 +353,14 @@ public class HorseRacing1 {
 		}
 	}
 	
-	public static void addToFile(String[] players, int[] newWallets, int[] wallet, String[] playersArray, int numPlayers) throws IOException{
+	public static void addToFile(String[] players, int[] newWallets, int[] wallet, String[] playersArr, int numPlayers) throws IOException{
 		
 			PrintWriter addToFiler = new PrintWriter(new FileWriter("Input/player.dat"));
 			addToFiler.print(players.length);
 			for (int i = 0; i <5; i++){
 				
-				for(int j=0; j<playersArray.length; j++){
-					if(playersArray[j] == players[i]){
+				for(int j=0; j<playersArr.length; j++){
+					if(playersArr[j] == players[i]){
 						wallet[i] = newWallets[j];
 					}
 				}
