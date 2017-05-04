@@ -1,42 +1,180 @@
 Room Name: Town Square
 Room Description:  This is the town square of your village.
-Exit Rooms: Farm, Plains, Run Jia's house, Bar, Home, Satanic temple, Babajide's house
+Exit Rooms: SW-Farm, S-Plains, E-Run Jia's house, NE-Bar, N-Home, NW-Satanic temple, W-Babajide's house
+
 Room Name: Home
 Room Description: This is your home.
-Exit Rooms: Town Square
+Exit Rooms: W-Town Square
+
 Room Name: Bar
-Room Description: 
-Exit Rooms: D-Room 2
+Room Description: This is the bar.
+Exit Rooms: SW-Town Square
+
+Room Name: Run Jia's house
+Room Description: This is Run Jia's house.
+Exit Rooms: W-Town Square
+
+Room Name: Farm
+Room Description: This is the farm.
+Exit Rooms: NE-Town Square
+
+Room Name: Satanic Temple
+Room Description: You have entered the temple of Satan.
+Exit Rooms: SE-Town Square
+
+Room Name: Babajide's house
+Room Description: This is Babajide's house.
+Exit Rooms: E-Town Square
+
+// Alguian
+
+Room Name: City gates
+Room Description: You are at the city gates.
+Exit Rooms: Plains
+
+Room Name: East city Square
+Room Description: This East city square.
+Exit Rooms: Slums, City gates, West city square, Upper class housing
+
+Room Name: Slums
+Room Description: You are in the slums.
+Exit Rooms: Ruined section, East city square
+
+Room Name: Ruined section
+Room Description: This is the ruined section.
+Exit Rooms: Slums
+
+Room Name: West city square
+Room Description: This is West city square.
+Exit Rooms: East city square, Upper class housing
+
+Room Name: Upper class housing
+Room Description: You are now in the upper class housing.
+Exit Rooms: Bank, East city square, West city square, Church, Royal Court
+
+Room Name: Church
+Room Description: You are in the church. 
+Exit Rooms: Upper class housing
+
+Room Name: Bank
+Room Description: This is the bank.
+Exit Rooms: Upper class housing
+
+Room Name: Royal Court
+Room Description: You are now in the royal court.
+Exit Rooms: Upper class housing
+
+Room Name: Castle
+Room Description: You are now in the castle.
+Exit Rooms: Royal Court
+
+// Kingdom of Rodrom
+
+Room Name: Gym Entrance
+Room Description: This is the entrance of the gym.
+Exit Rooms: Plains
+
+Room Name: Market
+Room Description: You are in the market. 
+Exit Rooms: Gym entrance, Work out central, Rest area
+
+Room Name: Rest area
+Room Description: This is the rest area.
+Exit Rooms: Market
+
+Room Name: Work out central
+Room Description: This is the central work out area.
+Exit Rooms: Market, Collosseum gate
+
+Room Name: Collosseum gate
+Room Description: This is the gate to the Collosseum.
+Exit Rooms: Work out central, Collosseum
+
+Room Name: Collosseum
+Room Description: You are in the Colloseum.
+Exit Rooms: Collosseum gate
+
+//Mountain castle
+
+Room Name: Main gate
+Room Description: This is the main gate.
+Exit Rooms: Plains
+
+Room Name: West bald cap entrance
+Room Description: This is the bald cap entrance.
+Exit Rooms: Main gate, Grand bazaar
+
+Room Name: East shave head entrance
+Room Description: This is the shave head entrance.
+Exit Rooms: Main gate, Grand bazaar
+
+Room Name: Grand bazaar
+Room Description: You are in the Grand Bazaar.
+Exit Rooms: East shave head entrance, West bald cap entrance, Lift 
+
+Room Name: Lift 
+Room Description: This is the lift for the second floor.
+Exit Rooms: Grand bazaar, Second floor landing
+
+Room Name: Second floor landing
+Room Description: This is the landing for the second floor.
+Exit Rooms: Lift, The hotel Cambolandia, The great and shiny palace
+
+Room Name: The hotel Cambolandia
+Room Description: Welcome to the hotel Cambolandia.
+Exit Rooms: Second floor landing
+
+Room Name: The great and shiny palace
+Room Description: You are in the great and shiny palace.
+Exit Rooms: Second floor landing, Mountain 1
+
+Room Name: Mountain 1
+Room Description: This is the first mountain.
+Exit Rooms: The great and shiny palace, Mountain 2
+
+Room Name: Mountain 2
+Room Description: This is the second mountain.
+Exit Rooms: Mountain 1, Mountain 3
+
+Room Name: Mountain 3
+Room Description: This is the third mountain.
+Exit Rooms: Mountain 2, Mountain 4
+
+Room Name: Mountain 4
+Room Description: This is the fourth mountain.
+Exit Rooms: Mountain 3, The Mountain Castle
+
+Room Name: The Mountain Castle
+Room Description: You are now in the Mountain Castle.
+Exit Rooms: Mountain 4
+
+//The Council of Derelicht
+
 Room Name: 
 Room Description: 
 Exit Rooms: 
+
 Room Name: 
 Room Description: 
 Exit Rooms: 
+
 Room Name: 
 Room Description: 
 Exit Rooms: 
+
 Room Name: 
 Room Description: 
 Exit Rooms: 
+
 Room Name: 
 Room Description: 
 Exit Rooms: 
+
 Room Name: 
 Room Description: 
 Exit Rooms: 
+
 Room Name: 
 Room Description: 
 Exit Rooms: 
-Room Name: 
-Room Description: 
-Exit Rooms: 
-Room Name: 
-Room Description: 
-Exit Rooms: 
-Room Name: 
-Room Description: 
-Exit Rooms: 
-Room Name: 
-Room Description: 
-Exit Rooms: 
+
