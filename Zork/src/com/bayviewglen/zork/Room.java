@@ -44,6 +44,10 @@ class Room
     public void setExit(char direction, Room r) throws Exception{
     	String dir= "";
     	switch (direction){
+    	case 'A' : dir = "northwest";break;
+    	case 'B' : dir = "northeast";break;
+    	case 'C' : dir = "southwest";break;
+    	case 'H' : dir = "southeast";break;
     	case 'E': dir = "east";break;
     	case 'W': dir = "west";break;
     	case 'S': dir = "south";break;
@@ -61,9 +65,17 @@ class Room
      * Define the exits of this room.  Every direction either leads to
      * another room or is null (no exit there).
      */
-    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down) 
+    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down, Room northwest, Room northeast, Room southwest, Room southeast) 
     {
-        if(north != null)
+    	if(northwest != null)
+            exits.put("northwest", northwest);
+    	if(northeast != null)
+            exits.put("northeast", northeast);
+    	if(southwest != null)
+            exits.put("southwest", southwest);
+    	if(southeast != null)
+            exits.put("southeast", southeast);
+    	if(north != null)
             exits.put("north", north);
         if(east != null)
             exits.put("east", east);

@@ -1,9 +1,9 @@
 Room Name: Town Square
 Room Description:  This is the town square of your village.
-Exit Rooms: SW-Farm, S-Plains, E-Run Jia's house, NE-Bar, N-Home, NW-Satanic temple, W-Babajide's house
+Exit Rooms: C-Farm, S-Plains, E-Run Jia's house, B-Bar, N-Home, A-Satanic temple, W-Babajide's house
 Room Name: Home
 Room Description: This is your home.
-Exit Rooms: W-Town Square
+Exit Rooms: S-Town Square
 Room Name: Bar
 Room Description: This is the bar.
 Exit Rooms: SW-Town Square
