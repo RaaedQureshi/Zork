@@ -18,19 +18,28 @@ package com.bayviewglen.zork;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 class Parser 
 {
-
+    private static Scanner keyboard = new Scanner (System.in);
     private CommandWords commands;  // holds all valid command words
-
+    public static String playerName;
+    
     public Parser() 
     {
         commands = new CommandWords();
+       // playerName = getPlayerName();
     }
 
-    public Command getCommand() 
+    public static void getPlayerName() {
+		// TODO Auto-generated method stub
+    	
+		playerName = keyboard.nextLine();
+	}
+
+	public Command getCommand() 
     {
         String inputLine = "";   // will hold the full input line
         String word1;
