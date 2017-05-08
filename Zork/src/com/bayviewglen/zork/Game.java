@@ -107,10 +107,12 @@ class Game
 
     /**
      *  Main play routine.  Loops until end of play.
+     * @throws InterruptedException 
      */
-    public void play() 
+    public void play() throws InterruptedException 
     {            
         printWelcome();
+        printBirth();
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
@@ -126,14 +128,76 @@ class Game
 
     /**
      * Print out the opening message for the player.
+     * @throws InterruptedException 
      */
-    private void printWelcome()
+    private void printWelcome() throws InterruptedException
     {
         System.out.println();
-        System.out.println("Welcome to Zork!");
-        System.out.println("Type 'help' if you need help.");
-        System.out.println();
-        System.out.println(currentRoom.longDescription());
+        System.out.println("Long ago, the 4 kingdoms of Elysia were at war.");
+        Thread.sleep(5000);
+        System.out.println("The four countries: Cambalandia, Algaia, Derelicht, Rodrom engaged in a blood bath that lasted for a hundred years. ");
+        Thread.sleep(5000);
+        System.out.println("Hundreds of thousands of lives were lost.");
+        Thread.sleep(5000);
+        System.out.println("Until one day, a hero was born, in a fifth country, much smaller than all the rest and placed inbetween them.");
+        Thread.sleep(5000);
+        System.out.println("Blessed by and granted the power of the Ancient Gods of Elysia, this hero fought off the legions of the four other countries in a grand final battle dubbed the red night.");
+        Thread.sleep(5000);
+        System.out.println("When the battle was done, all the remaining peoples of the land of elyssa were ready to bow down to this hero as king, but he refused, and diappeared.");
+        Thread.sleep(5000);
+        System.out.println("Thus a peace treaty was signed, and the war ended.");
+        Thread.sleep(5000);
+        System.out.println("As time passed, the story of this hero faded into myth, and was eventually forgotten.");
+        Thread.sleep(1000);
+        System.out.println("");
+        Thread.sleep(1000);
+        System.out.println("");
+        Thread.sleep(1000);
+        System.out.println("");
+        Thread.sleep(1000);
+        System.out.println("");
+        Thread.sleep(5000);
+        System.out.println("But one day, the spirit of the hero will be reborn into another.");
+        Thread.sleep(5000);
+    }
+    private void printBirth() throws InterruptedException{
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("Unknown voice: You, yes, you.");
+    	Thread.sleep(2500);
+    	System.out.println("[looking around you stand on a blue platform, floating in the middle of a black emptiness stretching as far as the eye can see]");
+    	Thread.sleep(2500);
+    	System.out.println("Unknown voice: Quit standing so far away come closer, I don’t have all day");
+    	Thread.sleep(2500);
+    	System.out.println("[You approach, there is a short man in a black suit sitting at a small desk.]");
+    	Thread.sleep(2500);
+    	System.out.println("[He is writing something in a large book with a feather quill]");
+    	Thread.sleep(2500);
+    	System.out.println("Unknown voice: So you’re the one huh?");
+    	Thread.sleep(2500);
+    	System.out.println("[He stares at you]");
+    	Thread.sleep(2500);
+    	System.out.println("Unknown voice: My name is Mukhtar, and you, are about to be born.");
+    	Thread.sleep(2500);
+    	System.out.println("Mukhtar: But before that, we must finalize a few details.");
+    	Thread.sleep(2500);
+    	System.out.println("Mukhtar: What is your gender?");
+    	Thread.sleep(2500);
+    	
+    	System.out.println(currentRoom.longDescription());
     }
 
     /**
