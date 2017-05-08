@@ -21,7 +21,7 @@ Room Description: This is Babajide's house.
 Exit Rooms: E-Town Square
 Room Name: City gates
 Room Description: You are at the city gates.
-Exit Rooms: S-Plains
+Exit Rooms: S-Plains, N-East city Square
 Room Name: East city Square
 Room Description: This East city square.
 Exit Rooms: E-Slums, S-City gates, W-West city square, N-Upper class housing
@@ -51,7 +51,7 @@ Room Description: You are now in the castle.
 Exit Rooms: S-Royal Court
 Room Name: Gym Entrance
 Room Description: This is the entrance of the gym.
-Exit Rooms: S-Plains, N-Market
+Exit Rooms: E-Plains, N-Market
 Room Name: Market
 Room Description: You are in the market. 
 Exit Rooms: S-Gym entrance, N-Work out central, W-Rest area
@@ -69,16 +69,16 @@ Room Description: You are in the Colloseum.
 Exit Rooms: E-Collosseum gate
 Room Name: Main gate
 Room Description: This is the main gate.
-Exit Rooms: S-Plains
+Exit Rooms: S-Plains, B-shave head entrance, A-Bald cap entrance
 Room Name: Bald cap entrance
 Room Description: This is the bald cap entrance.
 Exit Rooms: H-Main gate, B-Grand bazaar
-Room Name: East shave head entrance
+Room Name: Shave head entrance
 Room Description: This is the shave head entrance.
 Exit Rooms: C-Main gate, A-Grand bazaar
 Room Name: Grand bazaar
 Room Description: You are in the Grand Bazaar.
-Exit Rooms: H-East shave head entrance, C-Bald cap entrance, N-Lift 
+Exit Rooms: H-Shave head entrance, C-Bald cap entrance, N-Lift 
 Room Name: Lift 
 Room Description: This is the lift for the second floor.
 Exit Rooms: S-Grand bazaar, N-Second floor landing
@@ -108,4 +108,4 @@ Room Description: You are now in the Mountain Castle.
 Exit Rooms: E-Mountain 4
 Room Name: Plains
 Room Description: You wander the scattered desert of the planes. In the distance you see civilizations.
-Exit Rooms: N-City gates, W-Gym entrance, E-bald cap entrance
+Exit Rooms: N-City gates, W-Gym entrance, E-Main gate
