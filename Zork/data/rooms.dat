@@ -108,4 +108,40 @@ Room Description: You are now in the Mountain Castle.
 Exit Rooms: E-Mountain 4
 Room Name: Plains
 Room Description: You wander the scattered desert of the planes. In the distance you see civilizations.
-Exit Rooms: N-City gates, W-Gym entrance, E-Main gate
+Exit Rooms: N-City gates, W-Gym entrance, E-Main gate, S-Sages house
+Room Name: Sages house
+Room Description: This is Sages house.
+Exit Rooms: N-Plains, S-F1
+Room Name: F1
+Room Description: This is the first floor.
+Exit Rooms: N-Sages house, S-F2
+Room Name: F2
+Room Description: This is the second floor.
+Exit Rooms: N-F1, S-F3
+Room Name: F3
+Room Description: This is the third floor. 
+Exit Rooms: N-F2, E-Magic Avenue, W-Guard house
+Room Name: Guard house
+Room Description: This is the guard's house.
+Exit Rooms: E-F3, W-F4
+Room Name: F4
+Room Description: This is the fourth floor. 
+Exit Rooms: N-Entrance to the Catacombs, E-Guard house
+Room Name: Entrance to the Catacombs
+Room Description: You are at the entrance to the Catacombs.
+Exit Rooms: S-F4
+Room Name: Magic Avenue
+Room Description: This is magic avenue.
+Exit Rooms: S-The Derelicht University, E-Housing, W-F3
+Room Name: Housing
+Room Description: You are in the housing. 
+Exit Rooms: S-The council of Derelicht, W-Magic Avenue
+Room Name: The council of Derelicht
+Room Description: You are in the the council of Derelicht.
+Exit Rooms: N-Housing
+Room Name: The Derelicht University
+Room Description: This is the Derelicht University
+Exit Rooms: N-Magic Avenue, S-Sacred tree library
+Room Name: Sacred tree library
+Room Description: This is the sacred tree library
+Exit Rooms: N-The Derelicht University
