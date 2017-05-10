@@ -78,8 +78,8 @@ Room Description: This is the shave head entrance.
 Exit Rooms: C-Main gate, A-Grand bazaar
 Room Name: Grand bazaar
 Room Description: You are in the Grand Bazaar.
-Exit Rooms: H-Shave head entrance, C-Bald cap entrance, N-Lift 
-Room Name: Lift 
+Exit Rooms: H-Shave head entrance, C-Bald cap entrance, N-Lift
+Room Name: Lift
 Room Description: This is the lift for the second floor.
 Exit Rooms: S-Grand bazaar, N-Second floor landing
 Room Name: Second floor landing
@@ -90,7 +90,7 @@ Room Description: Welcome to the hotel Cambolandia.
 Exit Rooms: E-Second floor landing
 Room Name: The great and shiny palace
 Room Description: You are in the great and shiny palace.
-Exit Rooms: N-Second floor landing, W-Mountain 1
+Exit Rooms: S-Second floor landing, W-Mountain 1
 Room Name: Mountain 1
 Room Description: This is the first mountain.
 Exit Rooms: E-The great and shiny palace, W-Mountain 2
