@@ -19,7 +19,7 @@ class CommandWords
 
     /**
      * Constructor - initialise the command words.
-     */
+     *
     public CommandWords()
     {
         // nothing to do at the moment...

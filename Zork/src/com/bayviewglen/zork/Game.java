@@ -29,6 +29,7 @@ class Game
     private Parser parser;
     private static Scanner keyboard = new Scanner (System.in);
     private Room currentRoom;
+    private static int evil = 0;
     // This is a MASTER object that contains all of the rooms and is easily accessible.
     // The key will be the name of the room -> no spaces (Use all caps and underscore -> Great Room would have a key of GREAT_ROOM
     // In a hashmap keys are case sensitive.
@@ -89,6 +90,17 @@ class Game
 			e.printStackTrace();
 		}
     }    
+    
+    private void pressAnyKeyToContinue()
+    { 
+           
+           try
+           {
+               System.in.read();
+           }  
+           catch(Exception e)
+           {}  
+    }
 
     /**
      * Create the game and initialise its internal map.
@@ -135,31 +147,23 @@ class Game
     {
         System.out.println();
         System.out.println("Long ago, the 4 kingdoms of Elysia were at war.");
-        Thread.sleep(1500);
+        pressAnyKeyToContinue();
         System.out.println("The four countries: Cambalandia, Algaia, Derelicht, Rodrom engaged in a blood bath that lasted for a hundred years. ");
-        Thread.sleep(1500);
+        pressAnyKeyToContinue();
         System.out.println("Hundreds of thousands of lives were lost.");
-        Thread.sleep(1500);
+        pressAnyKeyToContinue();
         System.out.println("Until one day, a hero was born, in a fifth country, much smaller than all the rest and placed inbetween them.");
-        Thread.sleep(1500);
+        pressAnyKeyToContinue();
         System.out.println("Blessed by and granted the power of the Ancient Gods of Elysia, this hero fought off the legions of the four other countries in a grand final battle dubbed the red night.");
-        Thread.sleep(1500);
+        pressAnyKeyToContinue();
         System.out.println("When the battle was done, all the remaining peoples of the land of elyssa were ready to bow down to this hero as king, but he refused, and diappeared.");
-        Thread.sleep(1500);
+        pressAnyKeyToContinue();
         System.out.println("Thus a peace treaty was signed, and the war ended.");
-        Thread.sleep(1500);
+        pressAnyKeyToContinue();
         System.out.println("As time passed, the story of this hero faded into myth, and was eventually forgotten.");
-        Thread.sleep(1000);
-        System.out.println("");
-        Thread.sleep(1000);
-        System.out.println("");
-        Thread.sleep(1000);
-        System.out.println("");
-        Thread.sleep(1000);
-        System.out.println("");
-        Thread.sleep(1500);
+        pressAnyKeyToContinue();
         System.out.println("But one day, the spirit of the hero will be reborn into another.");
-        Thread.sleep(1500);
+        pressAnyKeyToContinue();
     }
     private void printBirth() throws InterruptedException{
     	System.out.println("");
@@ -178,26 +182,43 @@ class Game
     	System.out.println("");
     	System.out.println("");
     	System.out.println("Unknown voice: You, yes, you.");
-    	Thread.sleep(1000);
+    	pressAnyKeyToContinue();
     	System.out.println("[looking around you stand on a blue platform, floating in the middle of a black emptiness stretching as far as the eye can see]");
-    	Thread.sleep(1000);
+    	pressAnyKeyToContinue();
     	System.out.println("Unknown voice: Quit standing so far away come closer, I don’t have all day");
-    	Thread.sleep(1000);
+    	pressAnyKeyToContinue();
     	System.out.println("[You approach, there is a short man in a black suit sitting at a small desk.]");
-    	Thread.sleep(1000);
+    	pressAnyKeyToContinue();
     	System.out.println("[He is writing something in a large book with a feather quill]");
-    	Thread.sleep(1000);
+    	pressAnyKeyToContinue();
     	System.out.println("Unknown voice: So you’re the one huh?");
-    	Thread.sleep(1000);
+    	pressAnyKeyToContinue();
     	System.out.println("[He stares at you]");
-    	Thread.sleep(1000);
+    	pressAnyKeyToContinue();
     	System.out.println("Unknown voice: My name is Mukhtar, and you, are about to be born.");
-    	Thread.sleep(1000);
+    	pressAnyKeyToContinue();
     	System.out.println("Mukhtar: But before that, we must finalize a few details.");
-    	Thread.sleep(1000);
+    	pressAnyKeyToContinue();
     	System.out.println("Mukhtar: What is your name?");
     	Parser.getPlayerName();
-    	System.out.println(Parser.playerName + ", I see, I have a few questionsfor you.");
+    	System.out.println(Parser.playerName + ", I see, I have a few questions for you.");
+    	pressAnyKeyToContinue();
+    	System.out.println("Mukhtar: What are you most afraid of?");
+    	System.out.println("1. Losing the ones close to you");
+    	System.out.println("2. Getting old");
+    	System.out.println("3. Being useless");
+    	System.out.println("4. Dying a virgin");
+    	Parser.quiz(evil);
+    	System.out.println("Mukhtar: Interesting.");
+    	pressAnyKeyToContinue();
+    	System.out.println("What is most important to you?");
+    	System.out.println("1. Friendship");
+    	System.out.println("2. Freedom");
+    	System.out.println("3. The truth");
+    	System.out.println("4. Fame and riches");
+    	Parser.quiz(evil);
+    	
+    	
     	
     	
     	System.out.println(currentRoom.longDescription());

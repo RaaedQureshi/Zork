@@ -1,5 +1,5 @@
 package com.bayviewglen.zork;
 
-public class Good {
+public class Good extends Player {
 
 }
