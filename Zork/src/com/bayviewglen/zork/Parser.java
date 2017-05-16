@@ -37,7 +37,28 @@ class Parser
 		// TODO Auto-generated method stub
     	
 		playerName = keyboard.nextLine();
+		while (playerName.length() == 0){
+			System.out.println("That isn't a name.");
+			playerName = keyboard.nextLine();
+			
+		}
+		
+		
 	}
+    
+    public static int quiz(int evil){
+    	int choice = keyboard.nextInt();
+    	if (choice == 1);
+    	evil += choice;
+    	if (choice == 2);
+    	evil += choice;
+    	if (choice == 3);
+    	evil += choice;
+    	if (choice == 4);
+    	evil += choice;
+    	return evil;
+    
+    }
 
 	public Command getCommand() 
     {
