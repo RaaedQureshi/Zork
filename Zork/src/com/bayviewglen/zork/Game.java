@@ -202,6 +202,7 @@ class Game
     	System.out.println("Mukhtar: What is your name?");
     	Parser.getPlayerName();
     	System.out.println(Parser.playerName + ", I see, I have a few questions for you.");
+
     	pressAnyKeyToContinue();
     	System.out.println("Mukhtar: What are you most afraid of?");
     	System.out.println("1. Losing the ones close to you");
@@ -223,7 +224,6 @@ class Game
     	System.out.println("2. I do my best to avoid it");
     	System.out.println("3. It depends on the situation");
     	System.out.println("4. I constantly catch myself lying");    	    	
-    	
     	
 
 
