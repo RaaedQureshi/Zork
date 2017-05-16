@@ -217,31 +217,14 @@ class Game
     	System.out.println("3. The truth");
     	System.out.println("4. Fame and riches");
     	Parser.quiz(evil);
-    	
-    	
-    	
-    	System.out.println("What are you afraid of?");
-    	//insert new parser raaed
-    	System.out.println("A." + "Losing the ones close to you");
-    	System.out.println("B." + "Aging");
-    	System.out.println("C." + "Being Useless");
-    	System.out.println("D." + "Dying a virgin");
-    	//insert new parser raaed pls
-    	System.out.println("Muktar: Interesting...");
-    	System.out.println("What is most important to you?");
-    	System.out.println("A." + "The Truth");
-    	System.out.println("B." + "Friendship");
-    	System.out.println("C." + "Fame and riches");
-    	System.out.println("D." + "Freedom");    	
-    	//insert new parser raaed pls
     	System.out.println("Muktar: Hmmm...");
     	System.out.println("How do you feel about lying?");
-       	System.out.println("A." + "It depends on the situation");
-    	System.out.println("B." + "I do my best to avoid it");
-    	System.out.println("C." + "I constantly catch myself lying");
-    	System.out.println("D." + "It is a dishonorable act. I NEVER LIE!");    	    	
-    	//insert new parser raaed pls
-    	//insert more questions
+       	System.out.println("1. Lying is dishonorable, I NEVER LIE!");
+    	System.out.println("2. I do my best to avoid it");
+    	System.out.println("3. It depends on the situation");
+    	System.out.println("4. I constantly catch myself lying");    	    	
+    	
+    	
 
 
     	
