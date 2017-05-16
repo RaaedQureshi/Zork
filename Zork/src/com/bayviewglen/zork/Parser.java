@@ -46,7 +46,7 @@ class Parser
 		
 	}
     
-    public static int quiz(int evil){
+    public static void quiz(int evil){
     	int choice = keyboard.nextInt();
     	if (choice == 1);
     	evil += choice;
@@ -56,7 +56,7 @@ class Parser
     	evil += choice;
     	if (choice == 4);
     	evil += choice;
-    	return evil;
+    	Game.evil = evil;
     
     }
 

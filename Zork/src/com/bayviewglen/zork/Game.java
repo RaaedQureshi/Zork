@@ -29,7 +29,7 @@ class Game
     private Parser parser;
     private static Scanner keyboard = new Scanner (System.in);
     private Room currentRoom;
-    private static int evil = 0;
+    static int evil = 0;
     // This is a MASTER object that contains all of the rooms and is easily accessible.
     // The key will be the name of the room -> no spaces (Use all caps and underscore -> Great Room would have a key of GREAT_ROOM
     // In a hashmap keys are case sensitive.
@@ -91,7 +91,7 @@ class Game
 		}
     }    
     
-    private void pressAnyKeyToContinue()
+    public static void pressAnyKeyToContinue()
     { 
            
            try
@@ -222,7 +222,30 @@ class Game
        	System.out.println("1. Lying is dishonorable, I NEVER LIE!");
     	System.out.println("2. I do my best to avoid it");
     	System.out.println("3. It depends on the situation");
-    	System.out.println("4. I constantly catch myself lying");    	    	
+    	System.out.println("4. I constantly catch myself lying");   
+    	Parser.quiz(evil);
+    	System.out.println("Is that right.");
+    	pressAnyKeyToContinue();
+    	System.out.println("Mukhtar: There is a train running on a single track that branches off, on one track there are 5 people, one the other there is one. What do you do?");
+    	System.out.println("1. Switch to the track with five people.");
+    	System.out.println("2. Stay on the track with one person.");
+    	System.out.println("3. MULTI-TRACK DRIFTING!");
+    	Parser.quiz(evil);
+    	System.out.println("Mukhtar: That's all I need to know.");
+    	pressAnyKeyToContinue();
+    	System.out.println("I will now put you in a body.");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	System.out.println("");
+    	Player.intro(evil);
+    	
     	
     	
 
