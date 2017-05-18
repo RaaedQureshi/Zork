@@ -1,9 +1,24 @@
 package com.bayviewglen.zork;
 
-public class Player {
+public abstract class Player {
 	
 	private String name = Parser.playerName;
 	private int playerHealth;
+	private int strength = 0;
+	private int vitality = 0;
+	private int intellect = 0; 
+	private int luck = 0;
+	
+	public Player(int strength, int vitality, int intellect, int luck){
+		strength = strength;
+		vitality = vitality;
+		intellect = intellect;
+		luck = luck;
+		
+		
+	}
+	
+	
 	
 	private static void pressAnyKeyToContinue()
     { 
