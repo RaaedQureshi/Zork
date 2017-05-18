@@ -202,11 +202,7 @@ class Game
     	System.out.println("Mukhtar: What is your name?");
     	Parser.getPlayerName();
     	System.out.println(Parser.playerName + ", I see, I have a few questions for you.");
-<<<<<<< HEAD
 
-=======
-
->>>>>>> branch 'master' of https://github.com/RaaedQureshi/Zork
     	pressAnyKeyToContinue();
     	System.out.println("Mukhtar: What are you most afraid of?");
     	System.out.println("1. Losing the ones close to you");
