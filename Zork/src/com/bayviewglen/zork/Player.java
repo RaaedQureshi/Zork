@@ -2,20 +2,28 @@ package com.bayviewglen.zork;
 
 public abstract class Player {
 	
-	private String name = Parser.playerName;
+	private static String name = Parser.playerName;
 	private int playerHealth;
-	private int strength = 0;
-	private int vitality = 0;
-	private int intellect = 0; 
-	private int luck = 0;
+	private static int strength = 0;
+	private static int vitality = 0;
+	private static int intellect = 0; 
+	private static int luck = 0;
 	
 	public Player(int strength, int vitality, int intellect, int luck){
-		strength = strength;
-		vitality = vitality;
-		intellect = intellect;
-		luck = luck;
+		Player.strength = strength;
+		Player.vitality = vitality;
+		Player.intellect = intellect;
+		Player.luck = luck;
 		
 		
+	}
+	
+	public void displayPlayerStats() {
+		System.out.println("Stats Total: ");
+		System.out.println("Strength: " + strength);
+		System.out.println("Vitality: " + vitality);
+		System.out.println("Intellect: " + intellect);
+		System.out.println("Luck: " + luck);
 	}
 	
 	
@@ -47,15 +55,38 @@ public abstract class Player {
 		if (isEvil(evil) == true){       //Character is evil
 			System.out.println("In an obscure village lying in the forgotten plains, a child was born.");
 		    pressAnyKeyToContinue();
+		    System.out.println("His name was " + name);
+		    pressAnyKeyToContinue();
 			System.out.println("Widowed a decade ago, the child’s mother seeked another profession.");
 			pressAnyKeyToContinue();
 			System.out.println("Her pompous hair seemed surreal when paired with her thin limbs and fragile body.");
 			pressAnyKeyToContinue();
 			System.out.println("Behind the veil of smoke from her pipe, her heavily caked-up face wore the same smile as usual.");
+			pressAnyKeyToContinue();
+			System.out.println("She never wanted him.");
+			pressAnyKeyToContinue();
+			System.out.println("He was simply another mouth to feed, another body to dress.");
+			pressAnyKeyToContinue();
+			System.out.println("He never asked for this.");
+			pressAnyKeyToContinue();
+			System.out.println("He hated the way people would look at them.");
+			pressAnyKeyToContinue();
+			System.out.println("For some, their eyes were filled with desire and lust. While for others, their peering eyes were clouded with shame and disgust.");
+			pressAnyKeyToContinue();
+			System.out.println("He was rejected by the village day care, the other children would abuse him because he had no one to defend him, he only saw his mother once a day for whatever food she has left for him from her clients. ");
+			pressAnyKeyToContinue();
+			System.out.println("He couldn’t take it anymore. ");
+			pressAnyKeyToContinue();
+			System.out.println("He abandoned his past and left the village.");
+			pressAnyKeyToContinue();
 			
 			
 		} else{                          // Character is good
-			
+			System.out.println("In an obscure village lying in the forgotten plains, a child was born.");
+		    pressAnyKeyToContinue();
+		    System.out.println("His name was " + name);
+		    pressAnyKeyToContinue();
+		    
 		}
 	}
 }
