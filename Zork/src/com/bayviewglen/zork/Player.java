@@ -86,6 +86,27 @@ public abstract class Player {
 		    pressAnyKeyToContinue();
 		    System.out.println("His name was " + name);
 		    pressAnyKeyToContinue();
+		    System.out.println("The village was small and his family was poor, but they were happy.");
+		    pressAnyKeyToContinue();
+		    System.out.println("He lived with his father, mother, and little sister lived together with a few other families in peace.");
+		    pressAnyKeyToContinue();
+		    System.out.println("Years passed as the child lived a normal life and grew up.");
+		    pressAnyKeyToContinue();
+		    System.out.println("But that all changed when the empire attacked...");
+		    pressAnyKeyToContinue();
+		    System.out.println("");
+		    System.out.println("");
+		    System.out.println("");
+		    System.out.println("");
+		    System.out.println("");
+		    System.out.println("");
+		    System.out.println("Mother: You need to run.");
+		    pressAnyKeyToContinue();
+		    System.out.println("You look around afraid");
+		    pressAnyKeyToContinue();
+		    System.out.println("Mother: Now.");
+		    pressAnyKeyToContinue();
+		    
 		    
 		}
 	}
