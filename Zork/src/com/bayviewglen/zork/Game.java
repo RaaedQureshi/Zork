@@ -91,7 +91,10 @@ class Game
 		}
     } 
     
-   
+   private void initItems(){
+	   Item sword = new Item ("Sword", 5);
+	   Item dagger = new Item ("Dagger", 5);
+   }
     
     public static void pressAnyKeyToContinue()
     { 
