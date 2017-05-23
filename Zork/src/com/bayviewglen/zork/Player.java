@@ -3,7 +3,7 @@ package com.bayviewglen.zork;
 public abstract class Player {
 	
 	private static String name = Parser.playerName;
-	private int playerHealth;
+	private static int playerHP;
 	private static int strength = 0;
 	private static int vitality = 0;
 	private static int intellect = 0; 
@@ -16,6 +16,12 @@ public abstract class Player {
 		Player.luck = luck;
 		
 		
+	}
+	
+	public static int getPlayerHP(){
+		int HP = Player.playerHP;
+		
+		return HP;
 	}
 	
 	public void displayPlayerStats() {
