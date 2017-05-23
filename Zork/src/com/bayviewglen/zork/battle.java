@@ -1,6 +1,7 @@
 package com.bayviewglen.zork;
 
-public class battle {
+
+public class battle extends Algorithms{
 
 
 
@@ -9,10 +10,20 @@ public class battle {
 		boolean isBattleOver = false;
 		int playerHP = Player.getPlayerHP();
 		int enemyHP = Enemy.getEnemyHP();
+		boolean isPlayerTurn;
 
-		
+		if(flipForTurn()==1){
+			isPlayerTurn = true;
+		}else{
+			isPlayerTurn = false;
+		}
 		
 		while(playerHP!=0||enemyHP!=0){
+			
+			if(!isPlayerTurn){
+				
+			}
+				
 			
 		}
 		

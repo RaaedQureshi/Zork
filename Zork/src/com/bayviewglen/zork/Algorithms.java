@@ -33,5 +33,11 @@ public class Algorithms {
 		
 		
 	}
+	
+	public static int flipForTurn(){
+		int turn = (int)(Math.random()*2)+1;
+		
+		return turn;
+	}
 
 }
