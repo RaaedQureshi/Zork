@@ -3,7 +3,7 @@ package com.bayviewglen.zork;
 public abstract class Player {
 	
 	private static String name = Parser.playerName;
-	private int playerHealth;
+	private static int playerHP;
 	private static int strength = 0;
 	private static int vitality = 0;
 	private static int intellect = 0; 
@@ -16,6 +16,12 @@ public abstract class Player {
 		Player.luck = luck;
 		
 		
+	}
+	
+	public static int getPlayerHP(){
+		int HP = Player.playerHP;
+		
+		return HP;
 	}
 	
 	public void displayPlayerStats() {
@@ -106,6 +112,112 @@ public abstract class Player {
 		    pressAnyKeyToContinue();
 		    System.out.println("Mother: Now.");
 		    pressAnyKeyToContinue();
+		    System.out.println("You hear the sound of screams and horses outside, understanding the situation you follow her orders.");
+		    pressAnyKeyToContinue();
+		    System.out.println("She leads you to the back door and is about to send you off");
+		    pressAnyKeyToContinue();
+		    System.out.println("Mother: Go to the temple as fast as you can, hide until they leave.");
+		    pressAnyKeyToContinue();
+		    System.out.println("You grab her when she turns to leave");
+		    pressAnyKeyToContinue();
+		    System.out.println("Mother: Go!");
+		    pressAnyKeyToContinue();
+		    System.out.println("She runs off");
+		    pressAnyKeyToContinue();
+		    System.out.println("You leave make your way to the temple.");
+		    pressAnyKeyToContinue();
+		    System.out.println("…");
+		    pressAnyKeyToContinue();
+		    System.out.println("Hours have passed as you sit in the temple, to afraid to sleep");
+		    pressAnyKeyToContinue();
+		    System.out.println("The soldiers have set up camp in the village for the night and you cannot get past them until they leave");
+		    pressAnyKeyToContinue();
+		    System.out.println("Suddenly you hear a noise in the distance");
+		    pressAnyKeyToContinue();
+		    System.out.println("Footsteps!");
+		    pressAnyKeyToContinue();
+		    System.out.println("The soldiers have found you!");
+		    pressAnyKeyToContinue();
+		    System.out.println("They come closer and closer");
+		    pressAnyKeyToContinue();
+		    System.out.println("You look around but there is nowhere to hide");
+		    pressAnyKeyToContinue();
+		    System.out.println("Fat Soldier: Well what do we have here");
+		    pressAnyKeyToContinue();
+		    System.out.println("You try to run but the Tall soldier grabs you by the collar.");
+		    pressAnyKeyToContinue();
+		    System.out.println("Tall Soldier: Where you running to?");
+		    pressAnyKeyToContinue();
+		    System.out.println("Fat Soldier: Let’s take ‘im back to to the cart with the other kids");
+		    pressAnyKeyToContinue();
+		    System.out.println("Tall Soldier: wait a minute, this one looks kind of similar to-");
+		    pressAnyKeyToContinue();
+		    System.out.println("Fat Soldier: That woman!");
+		    pressAnyKeyToContinue();
+		    System.out.println("Tall Soldier: Hehe, you hear that kid, your mother was quite accommodating to us, we weren’t expecting that from some plains savages");
+		    pressAnyKeyToContinue();
+		    System.out.println("Out of anger you kick the soldier in the groin, he reels in pain.");
+		    pressAnyKeyToContinue();
+		    System.out.println("Tall: You little fucker, you’re gonna pay for that.");
+		    pressAnyKeyToContinue();
+		    System.out.println("He throws you against the wall, you fall to the ground and cough up blood");
+		    pressAnyKeyToContinue();
+		    System.out.println("As you try to regain your breath he picks you up and puts you against the wall");
+		    pressAnyKeyToContinue();
+		    System.out.println("Tall Soldier: I changed my mind, I’m gonna kill this one");
+		    pressAnyKeyToContinue();
+		    System.out.println("He pulls out a knife");
+		    pressAnyKeyToContinue();
+		    System.out.println("You close your eyes and prepare for the end");
+		    pressAnyKeyToContinue();
+		    System.out.println("He thrusts the knife forward a--");
+		    pressAnyKeyToContinue();
+		    System.out.println("Suddenly time freezes, staring at the tip of the knife you hear another noise");
+		    pressAnyKeyToContinue();
+		    System.out.println("A voice this time");
+		    pressAnyKeyToContinue();
+		    System.out.println("Unknown Voice: Hahaha, it seems you’re in quite the situation boy");
+		    pressAnyKeyToContinue();
+		    System.out.println("Unknown Voice: It seems you are finally ready to forge a contract");
+		    pressAnyKeyToContinue();
+		    System.out.println("Unknown Voice: My name, is Raiden, from this day forth, I will be with you");
+		    pressAnyKeyToContinue();
+		    System.out.println("Your head begins to throb");
+		    pressAnyKeyToContinue();
+		    System.out.println("Raiden: I art thou, thou art I, with this, a pact is formed");
+		    pressAnyKeyToContinue();
+		    System.out.println("Time restarts and the two soldiers are blown away from you by a giant force");
+		    pressAnyKeyToContinue();
+		    System.out.println("They both smash against the altar and are impaled by stone shards");
+		    pressAnyKeyToContinue();
+		    System.out.println("Lightning crackles around you");
+		    pressAnyKeyToContinue();
+		    System.out.println("Remembering the rest of your village you rush out to the village square");
+		    pressAnyKeyToContinue();
+		    System.out.println("A group of soldiers sit around a fire with dead bodies of men and women littered all around");
+		    pressAnyKeyToContinue();
+		    System.out.println("Raiden: Now, show me what you can do");
+		    pressAnyKeyToContinue();
+		    System.out.println("In a fit of rage you send streams of lightning at them all, killing them instantly");
+		    pressAnyKeyToContinue();
+		    System.out.println("Suddenly another soldier returns from the forest to find the scene");
+		    pressAnyKeyToContinue();
+		    System.out.println("He draws his sword and positions to fight you");
+		    pressAnyKeyToContinue();
+		    System.out.println("You try to do the same to him as the others but the power won’t come");
+		    pressAnyKeyToContinue();
+		    System.out.println("Raiden: Now listen here kid, I’ve shut off the power for a moment, there’s no use in getting all angry and wasting your energy");
+		    pressAnyKeyToContinue();
+		    System.out.println("Raiden: listen carefully, first thing first grab a weapon from off the ground.");
+		    pressAnyKeyToContinue();
+		    System.out.println("You look around and see two weapons");
+		    pressAnyKeyToContinue();
+		    System.out.println("A simple looking long sword lies to your left, it’s nothing special but it will stand in combat");
+		    pressAnyKeyToContinue();
+		    System.out.println("A pair of sharp daggers stuck in the mud to your left, there is a certain charm to them beyond aesthetics");
+		    pressAnyKeyToContinue();
+		    System.out.println("Raiden: Which will you choose?");
+		    
 		    
 		    
 		}
