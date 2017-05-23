@@ -7,7 +7,7 @@ public class Assassin extends Player {
 	private int luck;
 	
 	public Assassin(){
-		super(5,2,3,4);
+		super(4,2,4,4);
 	}
 	
 	

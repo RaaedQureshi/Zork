@@ -7,7 +7,7 @@ public class Warrior extends Player {
 	private int luck;
 	
 	public Warrior(){
-		super(3,5,2,2);
+		super(4,5,2,2);
 	}
 
 }
