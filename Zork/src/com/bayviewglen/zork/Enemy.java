@@ -2,11 +2,11 @@ package com.bayviewglen.zork;
 
 public abstract class Enemy {
 	
-	private int enemyHP;
+	private static int enemyHP;
 	private int[] stats = new int[2];
 	
-	public int getEnemyHP(String Enemy){
-		int HP = this.enemyHP;
+	public static int getEnemyHP(){
+		int HP = Enemy.enemyHP;
 		return HP;
 	}
 	
