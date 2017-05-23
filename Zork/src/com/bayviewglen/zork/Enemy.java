@@ -12,7 +12,7 @@ public abstract class Enemy {
 		return HP;
 	}
 	
-	public void setEnemyHP(int HP){
+	public static void setEnemyHP(int HP){
 		enemyHP = HP;
 	}
 	

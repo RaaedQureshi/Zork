@@ -24,8 +24,12 @@ public class Algorithms {
 		int dmg = 10 + str*7;
 		
 		if (isTargetEnemy){
-			
+			Enemy.setEnemyHP(Enemy.getEnemyHP()-dmg);
+		}else{
+			Player.setPlayerHP(Player.getPlayerHP()-dmg);
 		}
+		
+		return dmg;
 		
 		
 	}

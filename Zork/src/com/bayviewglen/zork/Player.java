@@ -25,6 +25,11 @@ public abstract class Player {
 		return HP;
 	}
 	
+	public static void setPlayerHP(int HP) {
+		playerHP = HP;
+		
+	}
+	
 	
 	
 	public void displayPlayerStats() {
@@ -225,6 +230,8 @@ public abstract class Player {
 		    
 		}
 	}
+
+	
 }
 	
 	
