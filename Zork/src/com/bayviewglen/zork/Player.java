@@ -24,6 +24,12 @@ public abstract class Player {
 		return HP;
 	}
 	
+	public static int getPlayerHP(){
+		int HP = Player.playerHP;
+		
+		return HP;
+	}
+	
 	public void displayPlayerStats() {
 		System.out.println("Stats Total: ");
 		System.out.println("Strength: " + strength);
