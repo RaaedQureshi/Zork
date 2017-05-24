@@ -21,7 +21,7 @@ public class battle extends Algorithms{
 		while(playerHP!=0||enemyHP!=0){
 			
 			if(!isPlayerTurn){
-				
+				attack(Enemy.getEnemySTR(), isPlayerTurn);
 			}
 				
 			

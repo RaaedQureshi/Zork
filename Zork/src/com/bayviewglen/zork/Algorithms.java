@@ -16,9 +16,8 @@ public class Algorithms {
 		return SP;
 	}
 	
-	public int attack(int STR, int HP, boolean isPlayerTurn){
+	public static int attack(int STR, boolean isPlayerTurn){
 		int str = STR;
-		int hp = HP;
 		boolean isTargetEnemy = isPlayerTurn;
 				
 		int dmg = 10 + str*7;
