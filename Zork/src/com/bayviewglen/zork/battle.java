@@ -1,7 +1,7 @@
 package com.bayviewglen.zork;
 
 
-public class battle extends Algorithms{
+public class battle extends Game{
 
 
 
@@ -22,6 +22,8 @@ public class battle extends Algorithms{
 			
 			if(!isPlayerTurn){
 				attack(Enemy.getEnemySTR(), isPlayerTurn);
+			}else{
+
 			}
 				
 			

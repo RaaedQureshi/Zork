@@ -78,7 +78,7 @@ public class Item {
 	     *     You are in the kitchen.
 	     *     Exits: north west
 	     */
-	    //i also changed the way to display the discription...
+	    //i also changed the way to display the description...
 	    public String longDescription()
 	    {
 	      if(hasItems() == true){

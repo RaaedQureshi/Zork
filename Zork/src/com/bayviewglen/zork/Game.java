@@ -35,6 +35,7 @@ class Game
     // In a hashmap keys are case sensitive.
     // masterRoomMap.get("GREAT_ROOM") will return the Room Object that is the Great Room (assuming you have one).
     private HashMap<String, Room> masterRoomMap;
+    private Inventory playerInventory;
     
     private void initRooms(String fileName) throws Exception{
     	masterRoomMap = new HashMap<String, Room>();
@@ -91,10 +92,44 @@ class Game
 		}
     } 
     
-   private void initItems(){
-	   Item sword = new Item ("Sword", 5);
-	   Item dagger = new Item ("Dagger", 5);
-   }
+    public int calculateHP(int VIT){
+		int vit = VIT;
+		
+		int HP = 100 + (VIT*10);
+		return HP;
+	}
+	
+	public int calculateSP(int INT){
+		int Int = INT;
+		
+		int SP = 50 + Int*5;
+		return SP;
+	}
+	
+	public static int attack(int STR, boolean isPlayerTurn){
+		int str = STR;
+		boolean isTargetEnemy = isPlayerTurn;
+				
+		int dmg = 10 + str*7;
+		
+		if (isTargetEnemy){
+			Enemy.setEnemyHP(Enemy.getEnemyHP()-dmg);
+		}else{
+			Player.setPlayerHP(Player.getPlayerHP()-dmg);
+		}
+		
+		return dmg;
+		
+		
+	}
+	
+	public static int flipForTurn(){
+		int turn = (int)(Math.random()*2)+1;
+		
+		return turn;
+	}
+    
+   
     
     public static void pressAnyKeyToContinue()
     { 
@@ -108,12 +143,16 @@ class Game
     }
 
     /**
-     * Create the game and initialise its internal map.
+     * Create the game and initialize its internal map.
      */
     public Game() {
         try {
 			initRooms("data/Rooms.dat");
+			playerInventory = new Inventory();
 			currentRoom = masterRoomMap.get("TOWN_SQUARE");
+			currentRoom.getRoomInventory().addItem(new Item("Sword", 5));
+			currentRoom.getRoomInventory().addItem(new Item("Dagger", 5));
+		    masterRoomMap.get("HOME").getRoomInventory().addItem(new Item ("Hassani", 5));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -122,7 +161,7 @@ class Game
     }
 
     
-
+s
     /**
      *  Main play routine.  Loops until end of play.
      * @throws InterruptedException 
