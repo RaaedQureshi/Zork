@@ -91,6 +91,43 @@ class Game
 		}
     } 
     
+    public int calculateHP(int VIT){
+		int vit = VIT;
+		
+		int HP = 100 + (VIT*10);
+		return HP;
+	}
+	
+	public int calculateSP(int INT){
+		int Int = INT;
+		
+		int SP = 50 + Int*5;
+		return SP;
+	}
+	
+	public static int attack(int STR, boolean isPlayerTurn){
+		int str = STR;
+		boolean isTargetEnemy = isPlayerTurn;
+				
+		int dmg = 10 + str*7;
+		
+		if (isTargetEnemy){
+			Enemy.setEnemyHP(Enemy.getEnemyHP()-dmg);
+		}else{
+			Player.setPlayerHP(Player.getPlayerHP()-dmg);
+		}
+		
+		return dmg;
+		
+		
+	}
+	
+	public static int flipForTurn(){
+		int turn = (int)(Math.random()*2)+1;
+		
+		return turn;
+	}
+    
    private void initItems(){
 	   Item sword = new Item ("Sword", 5);
 	   Item dagger = new Item ("Dagger", 5);
