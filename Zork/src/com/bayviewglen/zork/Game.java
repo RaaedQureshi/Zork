@@ -35,6 +35,7 @@ class Game
     // In a hashmap keys are case sensitive.
     // masterRoomMap.get("GREAT_ROOM") will return the Room Object that is the Great Room (assuming you have one).
     private HashMap<String, Room> masterRoomMap;
+    private Inventory playerInventory;
     
     private void initRooms(String fileName) throws Exception{
     	masterRoomMap = new HashMap<String, Room>();
@@ -145,12 +146,15 @@ class Game
     }
 
     /**
-     * Create the game and initialise its internal map.
+     * Create the game and initialize its internal map.
      */
     public Game() {
         try {
 			initRooms("data/Rooms.dat");
+			playerInventory = new Inventory();
 			currentRoom = masterRoomMap.get("TOWN_SQUARE");
+			currentRoom.getRoomInventory().addItem(new Item("Sword", 5));
+			currentRoom.getRoomInventory().addItem(new Item("Dagger", 5));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
