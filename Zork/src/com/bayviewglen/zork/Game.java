@@ -152,7 +152,9 @@ class Game
 			currentRoom = masterRoomMap.get("TOWN_SQUARE");
 			currentRoom.getRoomInventory().addItem(new Item("Sword", 5));
 			currentRoom.getRoomInventory().addItem(new Item("Dagger", 5));
+
 		    masterRoomMap.get("HOME").getRoomInventory().addItem(new Item ("Hassani", 5));
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -161,7 +163,7 @@ class Game
     }
 
     
-s
+
     /**
      *  Main play routine.  Loops until end of play.
      * @throws InterruptedException 

@@ -114,7 +114,9 @@ class Room
     public String longDescription()
     {
     	
+
         return "Room: " + roomName +"\n\n" + description + "\n" + exitString() + " There is " + roomInventory.print() + " in the room";
+
     }
 
     /**
