@@ -387,11 +387,19 @@ class Game
 			isPlayerTurn = false;
 		}
 		
+		System.out.println("You are now in battle!");
+		
 		while(playerHP!=0||enemyHP!=0){
 			
 			if(!isPlayerTurn){
 				attack(Enemy.getEnemySTR(), isPlayerTurn);
 			}else{
+				System.out.println("HP: " +PlayerHP);
+				System.out.println("SP: " +PlayerSP);
+				System.out.println("Possible actions: attack, analyze, skill, item");
+				
+				}
+				
 
 			}
 				

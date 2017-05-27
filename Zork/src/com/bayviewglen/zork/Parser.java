@@ -24,7 +24,7 @@ import java.util.StringTokenizer;
 class Parser 
 {
     private static Scanner keyboard = new Scanner (System.in);
-    private CommandWords commands;  // holds all valid command words
+    private static CommandWords commands;  // holds all valid command words
     public static String playerName;
     
     public Parser() 
@@ -45,6 +45,26 @@ class Parser
 		
 		
 	}
+    
+    public static void battle(String command){
+    	
+    	boolean validCommand = false;
+    	
+    	
+    	while(!validCommand){
+    		validCommand = true;
+    		command = keyboard.nextLine();
+    		
+    		if(command.length()==0){
+    			validCommand = false;
+    		}else{
+    			
+    				
+    			}
+    		}
+    		
+    	}
+ 
     
     public static void quiz(int evil){
     	int choice = keyboard.nextInt();
