@@ -109,11 +109,12 @@ class Game
 	private void equip (Command commandWord, Item secondWord){
 		if (commandWord.equals("equip")){
 			Inventory.addItem(secondWord);
+			Item.removeItem(secondWord);
 	}
 }
 	
 	private void unEquip (Command commandWord, Item secondWord){
-		if (commandWord.equals("equip")){
+		if (commandWord.equals("drop")){
 			Inventory.removeItem(secondWord);
 	}
 }
@@ -343,6 +344,7 @@ class Game
         }else if (commandWord.equals("eat")){
         	System.out.println("Do you really think you should be eating at a time like this?");
         }
+        
         return false;
     }
 

@@ -1,6 +1,7 @@
 package com.bayviewglen.zork;
 
 public class Assassin extends Player {
+	private String playerName = Player.name;
 	private int strength;
 	private int vitality;
 	private int intellect;

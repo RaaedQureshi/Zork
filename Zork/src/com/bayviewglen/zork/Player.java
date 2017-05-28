@@ -2,7 +2,7 @@ package com.bayviewglen.zork;
 
 public abstract class Player {
 	
-	private static String name = Parser.playerName;
+	protected static String name = Parser.playerName;
 	private static int playerHP;
 	private static int playerSP;
 	private static int strength = 0;

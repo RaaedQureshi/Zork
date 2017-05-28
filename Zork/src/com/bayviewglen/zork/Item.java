@@ -32,7 +32,7 @@ public class Item {
 	 }
 	
 	
-	 private ArrayList<Item> items;
+	 private static ArrayList<Item> items;
 	    //construct the item you want in a room (you can add more if it is needed. e.g, Item itemFour)
 	     public void setItems(Item itemOne, Item ItemTwo, Item itemThree){
 	     items = new ArrayList<Item>();
@@ -41,10 +41,12 @@ public class Item {
 	     items.add(itemThree);
 	     }
 	     //remove an item from the room
-	     public void removeItem(Item item){
+	     public static void removeItem(Item item){
 	     int currentIndex = items.indexOf(item);
 	     items.remove(currentIndex);
 	     }
+	    
+	     
 	     // print the item you have in a room
 	     public String printItems(){
 	     String itemsDescription = "";
