@@ -59,8 +59,6 @@ class Room
     	case 'W': dir = "west";break;
     	case 'S': dir = "south";break;
     	case 'N': dir = "north";break;
-    	case 'U': dir = "up";break;
-    	case 'D': dir = "down";break;
     	default: throw new Exception("Invalid Direction");
     	
     	}

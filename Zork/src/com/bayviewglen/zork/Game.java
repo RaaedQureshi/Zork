@@ -106,6 +106,20 @@ class Game
 		return SP;
 	}
 	
+	private void equip (Command commandWord, Item secondWord){
+		if (commandWord.equals("equip")){
+			Inventory.addItem(secondWord);
+	}
+}
+	
+	private void unEquip (Command commandWord, Item secondWord){
+		if (commandWord.equals("equip")){
+			Inventory.removeItem(secondWord);
+	}
+}
+	
+	
+	
 	public static int attack(int STR, boolean isPlayerTurn){
 		int str = STR;
 		boolean isTargetEnemy = isPlayerTurn;

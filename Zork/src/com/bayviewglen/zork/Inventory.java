@@ -3,17 +3,17 @@ package com.bayviewglen.zork;
 import java.util.ArrayList;
 
 public class Inventory {
-	private int currentIndex;
-	ArrayList<Item> inventory;
-	private int weight = 0;
-	private final int MAXVAULE = 50; // the max weight a character can make
+	private static int currentIndex;
+	static ArrayList<Item> inventory;
+	private static int weight = 0;
+	private final static int MAXVAULE = 50; // the max weight a character can make
 
 	public Inventory() {
 		inventory = new ArrayList<Item>(); // construct the object
 	}
 
 	// how to add an item to a inventory
-	public void addItem(Item item) {
+	public static void addItem(Item item) {
 		if ((weight + item.getMass()) < MAXVAULE) { // IT IS A + NOT A "+="
 			inventory.add(item);
 			weight += item.getMass();
@@ -23,7 +23,7 @@ public class Inventory {
 	}
 
 	// how to remove an item
-	public void removeItem(Item item) {
+	public static void removeItem(Item item) {
 		currentIndex = inventory.indexOf(item);
 		inventory.remove(currentIndex);
 		weight -= item.getMass();

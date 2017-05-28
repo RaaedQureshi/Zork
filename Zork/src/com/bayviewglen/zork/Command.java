@@ -24,8 +24,8 @@ package com.bayviewglen.zork;
 
 class Command
 {
-    private String commandWord;
-    private String secondWord;
+    private static String commandWord;
+    private static String secondWord;
 
     /**
      * Create a command object. First and second word must be supplied, but
