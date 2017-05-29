@@ -106,18 +106,9 @@ class Game
 		return SP;
 	}
 	
-	private void equip (Command commandWord, Item secondWord){
-		if (commandWord.equals("equip")){
-			Inventory.addItem(secondWord);
-			Item.removeItem(secondWord);
-	}
-}
 	
-	private void unEquip (Command commandWord, Item secondWord){
-		if (commandWord.equals("drop")){
-			Inventory.removeItem(secondWord);
-	}
-}
+	
+	
 	
 	
 	
@@ -167,6 +158,31 @@ class Game
 			currentRoom = masterRoomMap.get("TOWN_SQUARE");
 			currentRoom.getRoomInventory().addItem(new Item("Sword", 5));
 			currentRoom.getRoomInventory().addItem(new Item("Dagger", 5));
+
+			Room tempRoom = masterRoomMap.get("MARKET");
+			tempRoom.getRoomInventory().addItem(new Item("Knights Longsword", 4));
+			tempRoom.getRoomInventory().addItem(new Item("Claymore", 6));
+			tempRoom.getRoomInventory().addItem(new Item("Kitetsu", 3));
+			tempRoom.getRoomInventory().addItem(new Item("Dragons Bane", 10));
+			tempRoom.getRoomInventory().addItem(new Item("Assassins Daggers", 2));
+			tempRoom.getRoomInventory().addItem(new Item("Kitchen Knives", 1));
+			tempRoom.getRoomInventory().addItem(new Item("Kukri", 3));
+			tempRoom.getRoomInventory().addItem(new Item("Yin and Yang", 2));
+			
+		    tempRoom = masterRoomMap.get("GRAND_BAZAAR");
+			tempRoom.getRoomInventory().addItem(new Item("Worn Shirt", 2));
+			tempRoom.getRoomInventory().addItem(new Item("Leather Breastplate", 2));
+			tempRoom.getRoomInventory().addItem(new Item("Dark Armour", 4));
+			tempRoom.getRoomInventory().addItem(new Item("Durable Pants", 3));
+			tempRoom.getRoomInventory().addItem(new Item("Enchanted Leggings", 2));
+			tempRoom.getRoomInventory().addItem(new Item("Ordinary Shoes", 1));
+			tempRoom.getRoomInventory().addItem(new Item("Steel Plated Boots", 4));
+			tempRoom.getRoomInventory().addItem(new Item("Jordan Carhartt x Eminem", 4));
+			
+		    tempRoom = masterRoomMap.get("SATANIC_TEMPLE");
+			tempRoom.getRoomInventory().addItem(new Item("Warm Coffee", 1));
+			tempRoom.getRoomInventory().addItem(new Item("Satanic Bible", 1));
+			
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -341,12 +357,27 @@ class Game
                 return true;  // signal that we want to quit
         }else if (commandWord.equals("eat")){
         	System.out.println("Do you really think you should be eating at a time like this?");
+        }else if (commandWord.equals("equip")){
+        	equip(command);
+        }else if (commandWord.equals("drop")){
+        	drop(command);
         }
+    
         
         return false;
     }
 
-    // implementations of user commands:
+    private void drop(Command command) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void equip(Command command) {
+		
+		
+	}
+
+	// implementations of user commands:
 
     /**
      * Print out some help information.

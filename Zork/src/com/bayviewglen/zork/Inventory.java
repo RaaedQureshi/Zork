@@ -4,26 +4,23 @@ import java.util.ArrayList;
 
 public class Inventory {
 	private static int currentIndex;
-	static ArrayList<Item> inventory;
+	private ArrayList<Item> inventory;
 	private static int weight = 0;
-	private final static int MAXVAULE = 50; // the max weight a character can make
+	
 
 	public Inventory() {
 		inventory = new ArrayList<Item>(); // construct the object
 	}
 
 	// how to add an item to a inventory
-	public static void addItem(Item item) {
-		if ((weight + item.getMass()) < MAXVAULE) { // IT IS A + NOT A "+="
+	public void addItem(Item item) {
 			inventory.add(item);
 			weight += item.getMass();
-		} else {
-			System.out.println("It is too heavy to be carried!");
-		}
+		
 	}
 
 	// how to remove an item
-	public static void removeItem(Item item) {
+	public void removeItem(Item item) {
 		currentIndex = inventory.indexOf(item);
 		inventory.remove(currentIndex);
 		weight -= item.getMass();
@@ -56,7 +53,5 @@ public class Inventory {
 	}
 
 	// get the max weight you can carry
-	public int getCapacity() {
-		return MAXVAULE;
-	}
+	
 }

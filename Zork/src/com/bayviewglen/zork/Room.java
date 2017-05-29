@@ -109,7 +109,7 @@ class Room
     {
     	
 
-        return "Room: " + roomName +"\n\n" + description + "\n" + exitString() + " The items in this room are: " + roomInventory.print();
+        return "Room: " + roomName +"\n\n" + description + "\n" + exitString() + "\nThe items in this room are:\n" + roomInventory.print();
 
     }
 
