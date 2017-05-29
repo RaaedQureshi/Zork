@@ -88,10 +88,6 @@ class Room
             exits.put("south", south);
         if(west != null)
             exits.put("west", west);
-        if(up != null)
-            exits.put("up", up);
-        if(up != null)
-            exits.put("down", down);
         
     }
 
@@ -113,7 +109,7 @@ class Room
     {
     	
 
-        return "Room: " + roomName +"\n\n" + description + "\n" + exitString() + " There is " + roomInventory.print() + " in the room";
+        return "Room: " + roomName +"\n\n" + description + "\n" + exitString() + " The items in this room are: " + roomInventory.print();
 
     }
 

@@ -168,8 +168,6 @@ class Game
 			currentRoom.getRoomInventory().addItem(new Item("Sword", 5));
 			currentRoom.getRoomInventory().addItem(new Item("Dagger", 5));
 
-		    masterRoomMap.get("HOME").getRoomInventory().addItem(new Item ("Hassani", 5));
-
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -391,40 +389,40 @@ class Game
         }
     }
     
-    public static void battle() {
-		boolean isBattleOver = false;
-		int playerHP = Player.getPlayerHP();
-		int enemyHP = Enemy.getEnemyHP();
-		boolean isPlayerTurn;
-
-		if(flipForTurn()==1){
-			isPlayerTurn = true;
-		}else{
-			isPlayerTurn = false;
-		}
-		
-		System.out.println("You are now in battle!");
-		
-		while(playerHP!=0||enemyHP!=0){
-			
-			if(!isPlayerTurn){
-				attack(Enemy.getEnemySTR(), isPlayerTurn);
-			}else{
-				System.out.println("HP: " +PlayerHP);
-				System.out.println("SP: " +PlayerSP);
-				System.out.println("Possible actions: attack, analyze, skill, item");
-				
-				}
-				
-
-			}
-				
-			
-		}
-		
-		
-		
-
-	}
+//    public static void battle() {
+//		boolean isBattleOver = false;
+//		int playerHP = Player.getPlayerHP();
+//		int enemyHP = Enemy.getEnemyHP();
+//		boolean isPlayerTurn;
+//
+//		if(flipForTurn()==1){
+//			isPlayerTurn = true;
+//		}else{
+//			isPlayerTurn = false;
+//		}
+//		
+//		System.out.println("You are now in battle!");
+//		
+//		while(playerHP!=0||enemyHP!=0){
+//			
+//			if(!isPlayerTurn){
+//				attack(Enemy.getEnemySTR(), isPlayerTurn);
+//			}else{
+//				System.out.println("HP: " +PlayerHP);
+//				System.out.println("SP: " +PlayerSP);
+//				System.out.println("Possible actions: attack, analyze, skill, item");
+//				
+//				}
+//				
+//
+//			}
+//				
+//			
+//		}
+//		
+//		
+//		
+//
+//	}
   
 }
