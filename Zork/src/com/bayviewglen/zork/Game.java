@@ -154,21 +154,26 @@ class Game
     	if(choice.compareTo("sword") == 0){
        	  player = new Player(3,5,2,2);
        	 System.out.println("You chose to be a Warrior.");
-       	 equip(command);
-       	{
-       		if (choice.compareTo("dagger") == 0){
-       			player = new Player(5,2,3,4);
-          		 System.out.println("Well then, you chose to be an Assassin.");	
-          		 equip(command);
-       		}
-       		 
-       	}
+       	System.out.println("Please, equip the sword. (Type equip and then Sword)");
     	}
 	
+       	else if (choice.compareTo("dagger") == 0){
+       			player = new Player(5,2,3,4);
+          		 System.out.println("Well then, you chose to be an Assassin.");	
+          		 System.out.println("Please, equip the dagger. (Type equip and then Dagger)");
+       		}
+       		 
+       	
+
+
+	
 		return player;
+}
+
     	
     		
-    }
+    
+
     
    
     
@@ -191,32 +196,32 @@ class Game
 			initRooms("data/Rooms.dat");
 			playerInventory = new Inventory();
 			currentRoom = masterRoomMap.get("TOWN_SQUARE");
-			currentRoom.getRoomInventory().addItem(new Item("Sword"));
-			currentRoom.getRoomInventory().addItem(new Item("Dagger"));
+			currentRoom.getRoomInventory().addItem(new Item("sword"));
+			currentRoom.getRoomInventory().addItem(new Item("dagger"));
 
 			Room tempRoom = masterRoomMap.get("MARKET");
-			tempRoom.getRoomInventory().addItem(new Item("Knights Longsword"));
-			tempRoom.getRoomInventory().addItem(new Item("Claymore"));
-			tempRoom.getRoomInventory().addItem(new Item("Kitetsu"));
-			tempRoom.getRoomInventory().addItem(new Item("Dragons Bane"));
-			tempRoom.getRoomInventory().addItem(new Item("Assassins Daggers"));
-			tempRoom.getRoomInventory().addItem(new Item("Kitchen Knives"));
-			tempRoom.getRoomInventory().addItem(new Item("Kukri"));
-			tempRoom.getRoomInventory().addItem(new Item("Yin and Yang"));
+			tempRoom.getRoomInventory().addItem(new Item("knights longsword"));
+			tempRoom.getRoomInventory().addItem(new Item("claymore"));
+			tempRoom.getRoomInventory().addItem(new Item("kitetsu"));
+			tempRoom.getRoomInventory().addItem(new Item("dragons bane"));
+			tempRoom.getRoomInventory().addItem(new Item("assassins daggers"));
+			tempRoom.getRoomInventory().addItem(new Item("kitchen knives"));
+			tempRoom.getRoomInventory().addItem(new Item("kukri"));
+			tempRoom.getRoomInventory().addItem(new Item("yin and yang"));
 			
 		    tempRoom = masterRoomMap.get("GRAND_BAZAAR");
-			tempRoom.getRoomInventory().addItem(new Item("Worn Shirt"));
-			tempRoom.getRoomInventory().addItem(new Item("Leather Breastplate"));
-			tempRoom.getRoomInventory().addItem(new Item("Dark Armour"));
-			tempRoom.getRoomInventory().addItem(new Item("Durable Pants"));
-			tempRoom.getRoomInventory().addItem(new Item("Enchanted Leggings"));
+			tempRoom.getRoomInventory().addItem(new Item("worn shirt"));
+			tempRoom.getRoomInventory().addItem(new Item("leather breastplate"));
+			tempRoom.getRoomInventory().addItem(new Item("dark armour"));
+			tempRoom.getRoomInventory().addItem(new Item("durable pants"));
+			tempRoom.getRoomInventory().addItem(new Item("enchanted leggings"));
 			tempRoom.getRoomInventory().addItem(new Item("Ordinary Shoes"));
-			tempRoom.getRoomInventory().addItem(new Item("Steel Plated Boots"));
-			tempRoom.getRoomInventory().addItem(new Item("Jordan Carhartt x Eminem"));
+			tempRoom.getRoomInventory().addItem(new Item("steel plated boots"));
+			tempRoom.getRoomInventory().addItem(new Item("jordan carhartt x eminem"));
 			
 		    tempRoom = masterRoomMap.get("SATANIC_TEMPLE");
-			tempRoom.getRoomInventory().addItem(new Item("Warm Coffee"));
-			tempRoom.getRoomInventory().addItem(new Item("Satanic Bible"));
+			tempRoom.getRoomInventory().addItem(new Item("warm coffee"));
+			tempRoom.getRoomInventory().addItem(new Item("satanic bible"));
 			
 
 		} catch (Exception e) {
@@ -431,18 +436,33 @@ class Game
 			 
 			if ((currentItem != null)&&(currentItem.getDescription().equals(itemName))) {
 			playerInventory.addItem(currentItem);
-			 currentRoom.getItems().remove(i); 
+			 currentRoom.getRoomInventory().getInventory().remove(i); 
 			 i =currentRoom.getRoomInventory().getInventory().size(); 
 			 System.out.println(currentItem.getDescription() + " taken."); 
 			 found = true;
 			 i--;
 			 } 
+			if (itemName.equals("sword")){
+				currentRoom.getRoomInventory().getInventory().get(i).getDescription().equals("dagger");
+				currentRoom.getRoomInventory().getInventory().remove(i);
+				Player.strength += 2;
+			}if (itemName.equals("dagger")){
+				currentRoom.getRoomInventory().getInventory().get(i).getDescription().equals("sword");
+				currentRoom.getRoomInventory().getInventory().remove(i);
+				Player.luck += 2;
+				}
+			
+			}
+			 for (int j = 0; j < playerInventory.getInventory().size(); j ++){
+					Item currentItem = playerInventory.getInventory().get(j) ;
+				
 			 
 			 }
 			 
 			 if (found == false){
 			 System.out.println("The items is not in the room, please try again!");
 			 }
+			 
 }
 		
 		
@@ -491,6 +511,10 @@ class Game
             System.out.println(currentRoom.longDescription());
         }
     }
+
+
+
+
     
    private static void scrap() {
 		boolean isBattleOver = false;
@@ -547,4 +571,5 @@ class Game
 
 	}
   
-)
+}
+   }

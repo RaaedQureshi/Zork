@@ -1,5 +1,5 @@
 Room Name: Town Square
-Room Description:  This is the town square of your village.
+Room Description:  This is the town square of your village. Everyone around you is dead, explore your village then go south from here. 
 Exit Rooms: C-Farm, S-Plains, E-Run Jia's house, B-Bar, N-Home, A-Satanic temple, W-Babajide's house
 Room Name: Home
 Room Description: This is your home.
@@ -14,7 +14,7 @@ Room Name: Farm
 Room Description: This is the farm.
 Exit Rooms: B-Town Square
 Room Name: Satanic Temple
-Room Description: You have entered the temple of Satan.
+Room Description: You have entered the temple of Satan. This temple was a place of worship for the demon god Asura. It is a place of great power but also a place of great evil. Your palms are sweaty, knees are weak, and arms are heavy, you begin to vomit on your clothes as you loafed in the temple.
 Exit Rooms: H-Town Square
 Room Name: Babajide's house
 Room Description: This is Babajide's house.
@@ -108,7 +108,7 @@ Room Description: You are now in the Mountain Castle.
 Exit Rooms: E-Mountain 4
 Room Name: Plains
 Room Description: You wander the scattered desert of the planes. In the distance you see civilizations.
-Exit Rooms: N-City gates, W-Gym entrance, E-Main gate, S-Sages house
+Exit Rooms: N-City gates, W-Gym entrance, E-Main gate, S-Sages house, A-Town Square
 Room Name: Sages house
 Room Description: This is Sages house.
 Exit Rooms: N-Plains, S-F1

@@ -7,10 +7,10 @@ public class Player {
 	protected static String name = Parser.playerName;
 	private static int playerHP;
 	private static int playerSP;
-	private static int strength = 0;
-	private static int vitality = 0;
-	private static int intellect = 0; 
-	private static int luck = 0;
+	static int strength = 0;
+    static int vitality = 0;
+    static int intellect = 0; 
+    static int luck = 0;
 	private static Scanner keyboard = new Scanner (System.in);
 	
 	public Player(int strength, int vitality, int intellect, int luck){
