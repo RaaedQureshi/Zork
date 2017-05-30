@@ -152,12 +152,12 @@ class Game
     		
     	}
     	if(choice.compareTo("sword") == 0){
-       	  player = new Player(4,4,2,2);
+       	  player = new Player(3,5,2,2);
        	 System.out.println("You chose to be a Warrior.");
        	 equip(command);
        	{
        		if (choice.compareTo("dagger") == 0){
-       			player = new Player(2,2,4,4);
+       			player = new Player(5,2,3,4);
           		 System.out.println("Well then, you chose to be an Assassin.");	
           		 equip(command);
        		}
@@ -492,40 +492,59 @@ class Game
         }
     }
     
-//    public static void battle() {
-//		boolean isBattleOver = false;
-//		int playerHP = Player.getPlayerHP();
-//		int enemyHP = Enemy.getEnemyHP();
-//		boolean isPlayerTurn;
-//
-//		if(flipForTurn()==1){
-//			isPlayerTurn = true;
-//		}else{
-//			isPlayerTurn = false;
-//		}
-//		
-//		System.out.println("You are now in battle!");
-//		
-//		while(playerHP!=0||enemyHP!=0){
-//			
-//			if(!isPlayerTurn){
-//				attack(Enemy.getEnemySTR(), isPlayerTurn);
-//			}else{
-//				System.out.println("HP: " +PlayerHP);
-//				System.out.println("SP: " +PlayerSP);
-//				System.out.println("Possible actions: attack, analyze, skill, item");
-//				
-//				}
-//				
-//
-//			}
-//				
-//			
-//		}
-//		
-//		
-//		
-//
-//	}
+   private static void scrap() {
+		boolean isBattleOver = false;
+		int playerHP = Player.getPlayerHP();
+		int enemyHP = Enemy.getEnemyHP();
+		boolean isPlayerTurn;
+		final String[] VALID_COMMANDS = {"ATTACK, AT, A, OBSERVE, OB, O, SKILL, SK, S, ITEM, IT, I"};
+		String command = "";
+
+		if(flipForTurn()==1){
+			isPlayerTurn = true;
+		}else{
+			isPlayerTurn = false;
+		}
+		
+		System.out.println("You are now in battle!");
+		
+		while(playerHP!=0||enemyHP!=0){
+			
+			if(!isPlayerTurn){
+				attack(Enemy.getEnemySTR(), isPlayerTurn);
+			}else{
+				System.out.println("HP: " + Player.getPlayerHP());
+				System.out.println("SP: " +Player.getPlayerSP());
+				System.out.println("Possible actions: attack, observe, skill, item");
+				boolean validCommand = false;
+				while(!validCommand){
+					System.out.println("HP: " + Player.getPlayerHP());
+					System.out.println("SP: " +Player.getPlayerSP());
+					System.out.println("Possible actions: attack, observe, skill, item");
+					command = keyboard.nextLine();
+					for(int i = 0; i<VALID_COMMANDS.length;i++){
+						if(command.toUpperCase().equals(VALID_COMMANDS[i])){
+							validCommand = true;
+							
+					}else{
+						System.out.println("I don't know what that is but you can't do it.");
+						pressAnyKeyToContinue();
+					}
+					
+					
+					
+				
+				}
+				
+
+			}
+				
+			
+		}
+		
+		
+		
+
+	}
   
-}
+)

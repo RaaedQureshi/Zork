@@ -22,6 +22,7 @@ public class Player {
 		
 	}
 	
+	
 	public static int getPlayerHP(){
 		int HP = Player.playerHP;
 		
@@ -33,6 +34,11 @@ public class Player {
 		
 	}
 	
+	public static int getPlayerSP(){
+		int SP = Player.playerSP;
+		
+		return SP;
+	}
 	
 	
 	public void displayPlayerStats() {
