@@ -27,6 +27,8 @@ class Parser
     private static CommandWords commands;  // holds all valid command words
     public static String playerName;
     
+    
+    
     public Parser() 
     {
         commands = new CommandWords();

@@ -31,6 +31,8 @@ class Game
     private static Scanner keyboard = new Scanner (System.in);
     private static Room currentRoom;
     static int evil = 0;
+    private static String [] replies = {"What the hell?", "Wrong language", "Please say something that makes sense", "L"};
+    
     // This is a MASTER object that contains all of the rooms and is easily accessible.
     // The key will be the name of the room -> no spaces (Use all caps and underscore -> Great Room would have a key of GREAT_ROOM
     // In a hashmap keys are case sensitive.
@@ -146,6 +148,7 @@ class Game
     	}
     	while (choice.compareTo("sword") != 0 && choice.compareTo("dagger") != 0){
     		System.out.println("Please enter a weapon");
+    		choice = keyboard.nextLine();
     		
     	}
     	if(choice.compareTo("sword") == 0){
@@ -372,7 +375,7 @@ class Game
     {
         if(command.isUnknown())
         {
-            System.out.println("I don't know what you mean...");
+            System.out.println(replies[(int)((Math.random()*4)+1)]);
             return false;
         }
 
@@ -409,8 +412,8 @@ class Game
     	 Item currentItem = playerInventory.getInventory().get(i);
     	 if ((currentItem!=null)&&(currentItem.getDescription().equals(itemName))){
     	 playerInventory.removeItem(currentItem);
-    	 currentRoom.getItems().add(currentItem);
-    	 i = currentRoom.getItems().size();
+    	 currentRoom.getRoomInventory().getInventory().add(currentItem);
+    	 i = currentRoom.getRoomInventory().getInventory().size();
     	 System.out.println(currentItem.getDescription() + " dropped.");
     	 }
     	 }
@@ -423,22 +426,18 @@ class Game
 			 }
 			 boolean found = false;
 			 String itemName = command.getSecondWord();
-			 for (int i = 0; i < currentRoom.getItems().size(); i++){
-			 Item currentItem = currentRoom.getItems().get(i);
+			 for (int i = 0; i < currentRoom.getRoomInventory().getInventory().size(); i++){
+			 Item currentItem = currentRoom.getRoomInventory().getInventory().get(i);
 			 
 			if ((currentItem != null)&&(currentItem.getDescription().equals(itemName))) {
 			playerInventory.addItem(currentItem);
 			 currentRoom.getItems().remove(i); 
-			 i =currentRoom.getItems().size(); 
+			 i =currentRoom.getRoomInventory().getInventory().size(); 
 			 System.out.println(currentItem.getDescription() + " taken."); 
 			 found = true;
 			 i--;
 			 } 
-			 if ((currentItem != null)) { 
-			 System.out.println(currentItem.getDescription() + " is too heavy to be carried."); 
-			 i =currentRoom.getItems().size(); 
-			 found = true; 
-			} 
+			 
 			 }
 			 
 			 if (found == false){
