@@ -15,6 +15,7 @@ package com.bayviewglen.zork;
  */
 
 import java.util.Set;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -47,6 +48,67 @@ class Room
     	exits = new HashMap<String, Room>();
     	roomInventory = new Inventory();
 	}
+    
+    private static ArrayList<Item> items;
+    //construct the item you want in a room (you can add more if it is needed. e.g, Item itemFour)
+     public void setItems(Item itemOne, Item ItemTwo, Item itemThree){
+     items = new ArrayList<Item>();
+     items.add(itemOne);
+     items.add(ItemTwo);
+     items.add(itemThree);
+     }
+     //remove an item from the room
+     public static void removeItem(Item item){
+     int currentIndex = items.indexOf(item);
+     items.remove(currentIndex);
+     }
+    
+     
+     // print the item you have in a room
+     public String printItems(){
+     String itemsDescription = "";
+     for (int i = 0; i < items.size(); i++){
+     if (items.get(i)!= null){
+     itemsDescription += items.get(i).getDescription()+" ";
+     }
+     }
+ return itemsDescription;
+     }
+     //getter for the arraylist
+     public ArrayList<Item> getItems(){
+     return items;
+     }
+//check whether a room has item
+    public boolean hasItems(){
+     boolean hasItems = true;
+     int count = 0;
+     for(int i = 0; i <items.size();i++){
+     if (items.get(i)==null){
+     count++;
+     }
+     }
+     if (count == items.size()){
+     hasItems = false;
+     }
+     return hasItems;
+    }
+    /**
+     * Return a long description of this room, on the form:
+     *     You are in the kitchen.
+     *     Exits: north west
+     */
+    //i also changed the way to display the description...
+    public String longDescription1()
+    {
+      if(hasItems() == true){
+     return description.replaceAll("<br>", "\n")+ "\n"  + "The following items are avaliable: "+ printItems() + "\n" + toString();
+      }else{
+       return description.replaceAll("<br>", "\n")+ "\n"   + toString();
+      }
+     }
+
+
+
 
     public void setExit(char direction, Room r) throws Exception{
     	String dir= "";

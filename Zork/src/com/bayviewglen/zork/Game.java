@@ -27,15 +27,16 @@ import java.util.Scanner;
 class Game 
 {
     private Parser parser;
+    private static Player player;
     private static Scanner keyboard = new Scanner (System.in);
-    private Room currentRoom;
+    private static Room currentRoom;
     static int evil = 0;
     // This is a MASTER object that contains all of the rooms and is easily accessible.
     // The key will be the name of the room -> no spaces (Use all caps and underscore -> Great Room would have a key of GREAT_ROOM
     // In a hashmap keys are case sensitive.
     // masterRoomMap.get("GREAT_ROOM") will return the Room Object that is the Great Room (assuming you have one).
     private HashMap<String, Room> masterRoomMap;
-    private Inventory playerInventory;
+    private static Inventory playerInventory;
     
     private void initRooms(String fileName) throws Exception{
     	masterRoomMap = new HashMap<String, Room>();
@@ -134,6 +135,37 @@ class Game
 		
 		return turn;
 	}
+	
+	static Player weaponChoice(Command command){
+		
+	    System.out.println("Type the weapon you want (sword or dagger).");
+    	String choice = keyboard.nextLine(); 
+    	while (choice.length() == 0){
+    		System.out.println("Please enter something.");
+    		choice = keyboard.nextLine();
+    	}
+    	while (choice.compareTo("sword") != 0 && choice.compareTo("dagger") != 0){
+    		System.out.println("Please enter a weapon");
+    		
+    	}
+    	if(choice.compareTo("sword") == 0){
+       	  player = new Player(4,4,2,2);
+       	 System.out.println("You chose to be a Warrior.");
+       	 equip(command);
+       	{
+       		if (choice.compareTo("dagger") == 0){
+       			player = new Player(2,2,4,4);
+          		 System.out.println("Well then, you chose to be an Assassin.");	
+          		 equip(command);
+       		}
+       		 
+       	}
+    	}
+	
+		return player;
+    	
+    		
+    }
     
    
     
@@ -156,32 +188,32 @@ class Game
 			initRooms("data/Rooms.dat");
 			playerInventory = new Inventory();
 			currentRoom = masterRoomMap.get("TOWN_SQUARE");
-			currentRoom.getRoomInventory().addItem(new Item("Sword", 5));
-			currentRoom.getRoomInventory().addItem(new Item("Dagger", 5));
+			currentRoom.getRoomInventory().addItem(new Item("Sword"));
+			currentRoom.getRoomInventory().addItem(new Item("Dagger"));
 
 			Room tempRoom = masterRoomMap.get("MARKET");
-			tempRoom.getRoomInventory().addItem(new Item("Knights Longsword", 4));
-			tempRoom.getRoomInventory().addItem(new Item("Claymore", 6));
-			tempRoom.getRoomInventory().addItem(new Item("Kitetsu", 3));
-			tempRoom.getRoomInventory().addItem(new Item("Dragons Bane", 10));
-			tempRoom.getRoomInventory().addItem(new Item("Assassins Daggers", 2));
-			tempRoom.getRoomInventory().addItem(new Item("Kitchen Knives", 1));
-			tempRoom.getRoomInventory().addItem(new Item("Kukri", 3));
-			tempRoom.getRoomInventory().addItem(new Item("Yin and Yang", 2));
+			tempRoom.getRoomInventory().addItem(new Item("Knights Longsword"));
+			tempRoom.getRoomInventory().addItem(new Item("Claymore"));
+			tempRoom.getRoomInventory().addItem(new Item("Kitetsu"));
+			tempRoom.getRoomInventory().addItem(new Item("Dragons Bane"));
+			tempRoom.getRoomInventory().addItem(new Item("Assassins Daggers"));
+			tempRoom.getRoomInventory().addItem(new Item("Kitchen Knives"));
+			tempRoom.getRoomInventory().addItem(new Item("Kukri"));
+			tempRoom.getRoomInventory().addItem(new Item("Yin and Yang"));
 			
 		    tempRoom = masterRoomMap.get("GRAND_BAZAAR");
-			tempRoom.getRoomInventory().addItem(new Item("Worn Shirt", 2));
-			tempRoom.getRoomInventory().addItem(new Item("Leather Breastplate", 2));
-			tempRoom.getRoomInventory().addItem(new Item("Dark Armour", 4));
-			tempRoom.getRoomInventory().addItem(new Item("Durable Pants", 3));
-			tempRoom.getRoomInventory().addItem(new Item("Enchanted Leggings", 2));
-			tempRoom.getRoomInventory().addItem(new Item("Ordinary Shoes", 1));
-			tempRoom.getRoomInventory().addItem(new Item("Steel Plated Boots", 4));
-			tempRoom.getRoomInventory().addItem(new Item("Jordan Carhartt x Eminem", 4));
+			tempRoom.getRoomInventory().addItem(new Item("Worn Shirt"));
+			tempRoom.getRoomInventory().addItem(new Item("Leather Breastplate"));
+			tempRoom.getRoomInventory().addItem(new Item("Dark Armour"));
+			tempRoom.getRoomInventory().addItem(new Item("Durable Pants"));
+			tempRoom.getRoomInventory().addItem(new Item("Enchanted Leggings"));
+			tempRoom.getRoomInventory().addItem(new Item("Ordinary Shoes"));
+			tempRoom.getRoomInventory().addItem(new Item("Steel Plated Boots"));
+			tempRoom.getRoomInventory().addItem(new Item("Jordan Carhartt x Eminem"));
 			
 		    tempRoom = masterRoomMap.get("SATANIC_TEMPLE");
-			tempRoom.getRoomInventory().addItem(new Item("Warm Coffee", 1));
-			tempRoom.getRoomInventory().addItem(new Item("Satanic Bible", 1));
+			tempRoom.getRoomInventory().addItem(new Item("Warm Coffee"));
+			tempRoom.getRoomInventory().addItem(new Item("Satanic Bible"));
 			
 
 		} catch (Exception e) {
@@ -367,15 +399,56 @@ class Game
         return false;
     }
 
-    private void drop(Command command) {
-		// TODO Auto-generated method stub
-		
-	}
+    private void drop(Command command){
+    	 if (!command.hasSecondWord()) {
+    	 System.out.println("What do you want to drop?");
+    	 return;
+    	 }
+    	 String itemName = command.getSecondWord();
+    	 for (int i = 0; i < playerInventory.getNumItems(); i++){
+    	 Item currentItem = playerInventory.getInventory().get(i);
+    	 if ((currentItem!=null)&&(currentItem.getDescription().equals(itemName))){
+    	 playerInventory.removeItem(currentItem);
+    	 currentRoom.getItems().add(currentItem);
+    	 i = currentRoom.getItems().size();
+    	 System.out.println(currentItem.getDescription() + " dropped.");
+    	 }
+    	 }
+    	 }
 
-	private void equip(Command command) {
+	private static void equip(Command command) {
+			 if (!command.hasSecondWord()) {
+			 System.out.println("What do you want to equip?");
+			 return;
+			 }
+			 boolean found = false;
+			 String itemName = command.getSecondWord();
+			 for (int i = 0; i < currentRoom.getItems().size(); i++){
+			 Item currentItem = currentRoom.getItems().get(i);
+			 
+			if ((currentItem != null)&&(currentItem.getDescription().equals(itemName))) {
+			playerInventory.addItem(currentItem);
+			 currentRoom.getItems().remove(i); 
+			 i =currentRoom.getItems().size(); 
+			 System.out.println(currentItem.getDescription() + " taken."); 
+			 found = true;
+			 i--;
+			 } 
+			 if ((currentItem != null)) { 
+			 System.out.println(currentItem.getDescription() + " is too heavy to be carried."); 
+			 i =currentRoom.getItems().size(); 
+			 found = true; 
+			} 
+			 }
+			 
+			 if (found == false){
+			 System.out.println("The items is not in the room, please try again!");
+			 }
+}
 		
 		
-	}
+		
+	
 
 	// implementations of user commands:
 

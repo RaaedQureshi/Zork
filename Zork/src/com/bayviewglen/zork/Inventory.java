@@ -13,23 +13,23 @@ public class Inventory {
 	}
 
 	// how to add an item to a inventory
-	public void addItem(Item item) {
-			inventory.add(item);
-			weight += item.getMass();
+	public void addItem(Item string) {
+			inventory.add(string);
+			
 		
 	}
+	
+	
 
 	// how to remove an item
 	public void removeItem(Item item) {
 		currentIndex = inventory.indexOf(item);
 		inventory.remove(currentIndex);
-		weight -= item.getMass();
+		
 	}
 
 	// the weight that you currently are carrying
-	public int getWeight() {
-		return weight;
-	}
+	
 
 	// getter for the inventory arraylist
 	public ArrayList<Item> getInventory() {

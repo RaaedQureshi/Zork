@@ -55,6 +55,8 @@ class Command
     {
         return secondWord;
     }
+    
+    
 
     /**
      * Return true if this command was not understood.

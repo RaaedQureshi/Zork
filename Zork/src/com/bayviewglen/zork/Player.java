@@ -1,6 +1,8 @@
 package com.bayviewglen.zork;
 
-public abstract class Player {
+import java.util.Scanner;
+
+public class Player {
 	
 	protected static String name = Parser.playerName;
 	private static int playerHP;
@@ -9,6 +11,7 @@ public abstract class Player {
 	private static int vitality = 0;
 	private static int intellect = 0; 
 	private static int luck = 0;
+	private static Scanner keyboard = new Scanner (System.in);
 	
 	public Player(int strength, int vitality, int intellect, int luck){
 		Player.strength = strength;
@@ -142,7 +145,9 @@ public abstract class Player {
 			System.out.println("A pair of sharp daggers stuck in the mud to your left, there is a certain charm to them beyond their sharp looking aesthetics.");
 			pressAnyKeyToContinue();
 			System.out.println("ASURA: Which will you choose, boy? ");
-			pressAnyKeyToContinue();
+			String secondWord = keyboard.nextLine();
+			Command command = new Command ("equip", secondWord );
+			Game.weaponChoice(command);
 		
 			
 			
@@ -276,6 +281,10 @@ public abstract class Player {
 		    System.out.println("A pair of sharp daggers stuck in the mud to your left, there is a certain charm to them beyond aesthetics");
 		    pressAnyKeyToContinue();
 		    System.out.println("Raiden: Which will you choose?");
+		    String secondWord = keyboard.nextLine();
+			Command command = new Command ("equip", null );
+			Game.weaponChoice(command);
+			
 		    
 		    
 		    

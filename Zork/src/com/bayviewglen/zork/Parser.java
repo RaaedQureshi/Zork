@@ -64,6 +64,8 @@ class Parser
     		}
     		
     	}
+    
+    
  
     
     public static void quiz(int evil){
