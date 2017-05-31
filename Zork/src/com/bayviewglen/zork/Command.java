@@ -73,4 +73,11 @@ class Command
     {
         return (secondWord != null);
     }
+    
+    public int length(String firstword, String secondword){
+    	return (firstword.length()+secondword.length());
+    	
+    }
+
+	
 }
