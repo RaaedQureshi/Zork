@@ -147,13 +147,13 @@ class Game {
     	if(choice.compareTo("sword") == 0){
        	  player = new Player(3,5,2,2);
        	 System.out.println("You chose to be a Warrior.");
-       	System.out.println("Please, equip the sword. (Type equip and then Sword)");
+       	System.out.println("Please, equip the sword. (Type equip and then sword)");
     	}
 	
        	else if (choice.compareTo("dagger") == 0){
        			player = new Player(5,2,3,4);
           		 System.out.println("Well then, you chose to be an Assassin.");	
-          		 System.out.println("Please, equip the dagger. (Type equip and then Dagger)");
+          		 System.out.println("Please, equip the dagger. (Type equip and then dagger)");
        		}
        		 
        	
@@ -453,7 +453,7 @@ class Game {
 			}
 			 for (int j = 0; j < playerInventory.getInventory().size(); j ++){
 					Item currentItem = playerInventory.getInventory().get(j) ;
-				
+				    
 			 
 			 }
 			 
@@ -512,7 +512,7 @@ class Game {
 
 
 
-    
+   
    
 
 	private static void scrap() {
