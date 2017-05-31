@@ -94,10 +94,10 @@ class Game {
 		}
 	}
 
-	public int calculateHP(int VIT) {
+	public static int calculateHP(int VIT) {
 		int vit = VIT;
 
-		int HP = 100 + (VIT * 10);
+		int HP = 100 + (vit * 10);
 		return HP;
 	}
 
@@ -111,11 +111,25 @@ class Game {
 	public static int attack(int STR, boolean isPlayerTurn) {
 		int str = STR;
 		boolean isTargetEnemy = isPlayerTurn;
-
 		int dmg = 10 + str * 7;
-
 		if (isTargetEnemy) {
-			Enemy.setEnemyHP(Enemy.getEnemyHP() - dmg);
+			boolean crit = false;
+
+			
+
+			double critical = (int) ((Math.random() * 100) + 1);
+
+			if (critical >= 2 + (player.getPlayerLUK() * 1.5)) {
+				crit = true;
+			}
+
+			if (!crit) {
+				dmg = (10 + str * 7) * 2;
+				Enemy.setEnemyHP(Enemy.getEnemyHP() - dmg);
+			} else {
+
+				Enemy.setEnemyHP(Enemy.getEnemyHP() - dmg);
+			}
 		} else {
 			Player.setPlayerHP(Player.getPlayerHP() - dmg);
 		}
@@ -130,61 +144,49 @@ class Game {
 		return turn;
 	}
 
-	
-	static Player weaponChoice(Command command){
-		
-	    System.out.println("Type the weapon you want (sword or dagger).");
-    	String choice = keyboard.nextLine(); 
-    	while (choice.length() == 0){
-    		System.out.println("Please enter something.");
-    		choice = keyboard.nextLine();
-    	}
-    	while (choice.compareTo("sword") != 0 && choice.compareTo("dagger") != 0){
-    		System.out.println("Please enter a weapon");
-    		choice = keyboard.nextLine();
-    		
-    	}
-    	if(choice.compareTo("sword") == 0){
-       	  player = new Player(3,5,2,2);
-       	 System.out.println("You chose to be a Warrior.");
-       	System.out.println("Please, equip the sword. (Type equip and then sword)");
-    	}
-	
-       	else if (choice.compareTo("dagger") == 0){
-       			player = new Player(5,2,3,4);
-          		 System.out.println("Well then, you chose to be an Assassin.");	
-          		 System.out.println("Please, equip the dagger. (Type equip and then dagger)");
-       		}
-       		 
-       	
-
 
 	
+	
+
+
+	static Player weaponChoice(Command command) {
+
+		System.out.println("Type the weapon you want (sword or dagger).");
+		String choice = keyboard.nextLine();
+		while (choice.length() == 0) {
+			System.out.println("Please enter something.");
+			choice = keyboard.nextLine();
+		}
+		while (choice.compareTo("sword") != 0 && choice.compareTo("dagger") != 0) {
+			System.out.println("Please enter a weapon");
+			choice = keyboard.nextLine();
+
+		}
+		if (choice.compareTo("sword") == 0) {
+			player = new Player(3, 5, 2, 2);
+			System.out.println("You chose to be a Warrior.");
+			System.out.println("Please, equip the sword. (Type equip and then Sword)");
+		}
+
+		else if (choice.compareTo("dagger") == 0) {
+			player = new Player(5, 2, 3, 4);
+			System.out.println("Well then, you chose to be an Assassin.");
+			System.out.println("Please, equip the dagger. (Type equip and then Dagger)");
+		}
+
+		player.setPlayerHP(calculateHP(player.getPlayerVIT()));
+
 		return player;
-}
 
-    	
-    		
-    
+	}
 
-    
-   
-    
-    public static void pressAnyKeyToContinue()
-    { 
-           
-           try
-           {
-               System.in.read();
-           }  
-           catch(Exception e)
-           {}  
-    }
+	public static void pressAnyKeyToContinue() {
 
-
-	
-
-	
+		try {
+			System.in.read();
+		} catch (Exception e) {
+		}
+	}
 
 	/**
 	 * Create the game and initialize its internal map.
@@ -207,26 +209,20 @@ class Game {
 			tempRoom.getRoomInventory().addItem(new Item("kitchen knives"));
 			tempRoom.getRoomInventory().addItem(new Item("kukri"));
 			tempRoom.getRoomInventory().addItem(new Item("yin and yang"));
-			
-		    tempRoom = masterRoomMap.get("GRAND_BAZAAR");
+
+			tempRoom = masterRoomMap.get("GRAND_BAZAAR");
 			tempRoom.getRoomInventory().addItem(new Item("worn shirt"));
 			tempRoom.getRoomInventory().addItem(new Item("leather breastplate"));
 			tempRoom.getRoomInventory().addItem(new Item("dark armour"));
 			tempRoom.getRoomInventory().addItem(new Item("durable pants"));
 			tempRoom.getRoomInventory().addItem(new Item("enchanted leggings"));
 
-			
 			tempRoom.getRoomInventory().addItem(new Item("steel plated boots"));
 			tempRoom.getRoomInventory().addItem(new Item("jordan carhartt x eminem"));
-			
-		    tempRoom = masterRoomMap.get("SATANIC_TEMPLE");
+
+			tempRoom = masterRoomMap.get("SATANIC_TEMPLE");
 			tempRoom.getRoomInventory().addItem(new Item("warm coffee"));
 			tempRoom.getRoomInventory().addItem(new Item("satanic bible"));
-			
-
-
-			
-
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -307,13 +303,13 @@ class Game {
 		System.out.println(
 				"[looking around you stand on a blue platform, floating in the middle of a black emptiness stretching as far as the eye can see]");
 		pressAnyKeyToContinue();
-		System.out.println("Unknown voice: Quit standing so far away come closer, I don’t have all day");
+		System.out.println("Unknown voice: Quit standing so far away come closer, I donâ€™t have all day");
 		pressAnyKeyToContinue();
 		System.out.println("[You approach, there is a short man in a black suit sitting at a small desk.]");
 		pressAnyKeyToContinue();
 		System.out.println("[He is writing something in a large book with a feather quill]");
 		pressAnyKeyToContinue();
-		System.out.println("Unknown voice: So you’re the one huh?");
+		System.out.println("Unknown voice: So youâ€™re the one huh?");
 		pressAnyKeyToContinue();
 		System.out.println("[He stares at you]");
 		pressAnyKeyToContinue();
@@ -423,36 +419,36 @@ class Game {
 
 	private static void equip(Command command) {
 
-			 if (!command.hasSecondWord()) {
-			 System.out.println("What do you want to equip?");
-			 return;
-			 }
-			 boolean found = false;
-			 String itemName = command.getSecondWord();
-			 for (int i = 0; i < currentRoom.getRoomInventory().getInventory().size(); i++){
-			 Item currentItem = currentRoom.getRoomInventory().getInventory().get(i);
-			 
-			if ((currentItem != null)&&(currentItem.getDescription().equals(itemName))) {
-			playerInventory.addItem(currentItem);
-			 currentRoom.getRoomInventory().getInventory().remove(i); 
-			 i =currentRoom.getRoomInventory().getInventory().size(); 
-			 System.out.println(currentItem.getDescription() + " taken."); 
-			 found = true;
-			 i--;
-			 } 
-			if (itemName.equals("sword")){
+		if (!command.hasSecondWord()) {
+			System.out.println("What do you want to equip?");
+			return;
+		}
+		boolean found = false;
+		String itemName = command.getSecondWord();
+		for (int i = 0; i < currentRoom.getRoomInventory().getInventory().size(); i++) {
+			Item currentItem = currentRoom.getRoomInventory().getInventory().get(i);
+
+			if ((currentItem != null) && (currentItem.getDescription().equals(itemName))) {
+				playerInventory.addItem(currentItem);
+				currentRoom.getRoomInventory().getInventory().remove(i);
+				i = currentRoom.getRoomInventory().getInventory().size();
+				System.out.println(currentItem.getDescription() + " taken.");
+				found = true;
+				i--;
+			}
+			if (itemName.equals("sword")) {
 				currentRoom.getRoomInventory().getInventory().get(i).getDescription().equals("dagger");
 				currentRoom.getRoomInventory().getInventory().remove(i);
 				Player.strength += 2;
-			}if (itemName.equals("dagger")){
+			}
+			if (itemName.equals("dagger")) {
 				currentRoom.getRoomInventory().getInventory().get(i).getDescription().equals("sword");
 				currentRoom.getRoomInventory().getInventory().remove(i);
 				Player.luck += 2;
-				}
-			
 			}
+
 			 for (int j = 0; j < playerInventory.getInventory().size(); j ++){
-					Item currentItem = playerInventory.getInventory().get(j) ;
+					Item currentItem1 = playerInventory.getInventory().get(j) ;
 				    
 			 
 			 }
@@ -460,6 +456,8 @@ class Game {
 			 if (found == false){
 			 System.out.println("The items is not in the room, please try again!");
 			 }
+		}
+			 
 			 
 }
 		
@@ -468,6 +466,7 @@ class Game {
 	
 
 
+		
 
 	// implementations of user commands:
 
@@ -499,29 +498,32 @@ class Game {
 		// Try to leave current room.
 		Room nextRoom = currentRoom.nextRoom(direction);
 
+		if (nextRoom == null)
+			System.out.println("There is no door!");
+		else {
+			currentRoom = nextRoom;
+			System.out.println(currentRoom.longDescription());
+		}
+	}
 
-        if (nextRoom == null)
-            System.out.println("There is no door!");
-        else 
-        {
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.longDescription());
-        }
-    }
 
 
 
 
    
    
+
+	
 
 	private static void scrap() {
+
 		boolean isBattleOver = false;
 		int playerHP = Player.getPlayerHP();
 		int enemyHP = Enemy.getEnemyHP();
 		boolean isPlayerTurn;
 		final String[] VALID_COMMANDS = { "ATTACK, AT, A, OBSERVE, OB, O, SKILL, SK, S, ITEM, IT, I" };
 		String command = "";
+		boolean stillTurn = false;
 
 		if (flipForTurn() == 1) {
 			isPlayerTurn = true;
@@ -535,27 +537,44 @@ class Game {
 
 			if (!isPlayerTurn) {
 				attack(Enemy.getEnemySTR(), isPlayerTurn);
+				isPlayerTurn = true;
 			} else {
-				System.out.println("HP: " + Player.getPlayerHP());
-				System.out.println("SP: " + Player.getPlayerSP());
-				System.out.println("Possible actions: attack, observe, skill, item");
-				boolean validCommand = false;
-				while (!validCommand) {
-					System.out.println("HP: " + Player.getPlayerHP());
-					System.out.println("SP: " + Player.getPlayerSP());
-					System.out.println("Possible actions: attack, observe, skill, item");
-					command = keyboard.nextLine();
-					for (int i = 0; i < VALID_COMMANDS.length; i++) {
-						if (command.toUpperCase().equals(VALID_COMMANDS[i])) {
-							validCommand = true;
+				while (!stillTurn) {
+					stillTurn = true;
+					boolean validCommand = false;
+					while (!validCommand) {
+						System.out.println("HP: " + Player.getPlayerHP());
+						System.out.println("SP: " + Player.getPlayerSP());
+						System.out.println("Possible actions: attack, observe, skill, item");
+						command = keyboard.nextLine();
+						for (int i = 0; i < VALID_COMMANDS.length; i++) {
+							if (command.toUpperCase().equals(VALID_COMMANDS[i])) {
+								validCommand = true;
 
-						} else {
-							System.out.println("I don't know what that is but you can't do it.");
-							pressAnyKeyToContinue();
+							}
+
 						}
+						if (!validCommand)
+							System.out.println("I don't know what that is but you can't do it");
 
 					}
 
+					if (command.toUpperCase().equals("ATTACK") || command.toUpperCase().equals("ATT")
+							|| command.toUpperCase().equals("A")) {
+						attack(Player.getPlayerSTR(), isPlayerTurn);
+						stillTurn = false;
+					} else if (command.toUpperCase().equals("OBSERVE") || command.toUpperCase().equals("OB")
+							|| command.toUpperCase().equals("O")) {
+						System.out.println("Enemy HP: " + Enemy.getEnemyHP());
+						System.out.println("Enemy STR: " + Enemy.getEnemySTR());
+
+					} else if (command.toUpperCase().equals("ITEM") || command.toUpperCase().equals("IT")
+							|| command.toUpperCase().equals("I")) {
+
+					} else if (command.toUpperCase().equals("SKILL") || command.toUpperCase().equals("SK")
+							|| command.toUpperCase().equals("S")) {
+						
+					}
 				}
 
 			}
@@ -564,9 +583,4 @@ class Game {
 
 	}
 
-  
-
-   }
-
-
-
+}

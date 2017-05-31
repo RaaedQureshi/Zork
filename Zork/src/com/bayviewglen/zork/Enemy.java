@@ -1,27 +1,61 @@
 package com.bayviewglen.zork;
 
-public abstract class Enemy {
+public class Enemy {
 	
 
 
 	private static int enemyHP;
 	private static int STR;
 	private static int VIT;
-	
-	public static int getEnemyHP(){
-		int HP = Enemy.enemyHP;
-		return HP;
-	}
-	
-	public static int getEnemySTR(){
-		int str = STR;
+	private static int LUCK;
+	private static int INTELLECT;
+	private String name = getEnemyName();
 		
-		return str;
+	
+	
+	public Enemy(String name, int strength, int vitality, int luck, int intellect, int enemyHp){
+		Enemy.STR = strength;
+		Enemy.VIT = vitality;
+		Enemy.LUCK = luck;
+		Enemy.INTELLECT = intellect;
+		Enemy.enemyHP = enemyHp;
 	}
 	
-	public static void setEnemyHP(int HP){
-		enemyHP = HP;
+	
+	
+	private String getEnemyName() {
+		return name;
+		
 	}
+	
+	static int getEnemyHP(){
+		return enemyHP;
+	}
+
+
+
+	public static void setEnemyHP(int enemyHP) {
+		enemyHP = enemyHP;
+		
+	}
+
+
+
+	public static int getEnemySTR() {
+		return STR;
+	}
+	
+	
+
+
+
+	
+
+
+
+	
+	
+	
 	
 
 }

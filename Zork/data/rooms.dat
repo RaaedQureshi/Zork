@@ -69,7 +69,7 @@ Room Description: You are in the Colloseum.
 Exit Rooms: E-Collosseum gate
 Room Name: Main gate
 Room Description: This is the main gate.
-Exit Rooms: S-Plains, B-shave head entrance, A-Bald cap entrance
+Exit Rooms: W-Plains, B-shave head entrance, A-Bald cap entrance
 Room Name: Bald cap entrance
 Room Description: This is the bald cap entrance.
 Exit Rooms: H-Main gate, B-Grand bazaar
@@ -107,7 +107,7 @@ Room Name: The Mountain Castle
 Room Description: You are now in the Mountain Castle.
 Exit Rooms: E-Mountain 4
 Room Name: Plains
-Room Description: You wander the scattered desert of the planes. In the distance you see civilizations.
+Room Description: You wander the scattered desert of the planes. In the distance you see civilizations. East is Cambelandia, South is Derelicht, West is Rodrom and North is Algaia. Start your quest by going East, then South, then West, then North.
 Exit Rooms: N-City gates, W-Gym entrance, E-Main gate, S-Sages house, A-Town Square
 Room Name: Sages house
 Room Description: This is Sages house.

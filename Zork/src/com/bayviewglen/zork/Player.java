@@ -29,6 +29,18 @@ public class Player {
 		return HP;
 	}
 	
+	public static int getPlayerVIT(){
+		return vitality;
+	}
+	
+	public static int getPlayerLUK(){
+		return luck;
+	}
+	
+	public static int getPlayerSTR(){
+		return strength;
+	}
+	
 	public static void setPlayerHP(int HP) {
 		playerHP = HP;
 		
