@@ -198,6 +198,8 @@ class Game {
 			currentRoom = masterRoomMap.get("TOWN_SQUARE");
 			currentRoom.getRoomInventory().addItem(new Item("sword"));
 			currentRoom.getRoomInventory().addItem(new Item("dagger"));
+			Enemy hassani = new Enemy ("Daddy", 2, 4, 0);
+			hassani.setEnemyHP(calculateHP(Enemy.getEnemyVIT()));
 
 			Room tempRoom = masterRoomMap.get("MARKET");
 

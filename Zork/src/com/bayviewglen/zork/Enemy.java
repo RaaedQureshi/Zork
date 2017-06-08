@@ -7,17 +7,13 @@ public class Enemy {
 	private static int enemyHP;
 	private static int STR;
 	private static int VIT;
-	private static int LUCK;
-	private static int INTELLECT;
 	private String name = getEnemyName();
 		
 	
 	
-	public Enemy(String name, int strength, int vitality, int luck, int intellect, int enemyHp){
+	public Enemy(String name, int strength, int vitality, int enemyHp){
 		Enemy.STR = strength;
 		Enemy.VIT = vitality;
-		Enemy.LUCK = luck;
-		Enemy.INTELLECT = intellect;
 		Enemy.enemyHP = enemyHp;
 	}
 	
@@ -26,6 +22,10 @@ public class Enemy {
 	private String getEnemyName() {
 		return name;
 		
+	}
+	
+	static int getEnemyVIT(){
+		return VIT;
 	}
 	
 	static int getEnemyHP(){
